@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:yam_baba_e_commerce/resources/routes/routes.dart';
+import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/home_screen.dart';
+import 'package:yam_baba_e_commerce/view/login_screen.dart';
+import 'package:yam_baba_e_commerce/view/signup_screen.dart';
 import 'package:yam_baba_e_commerce/view/splash_screen.dart';
 
 void main() {
@@ -12,9 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-    );
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: "/SplashScreen",
+        getPages: [
+          // AppRoutes.appRoutes()
+          GetPage(name: '/', page: () => SplashScreen()),
+          GetPage(name: '/LoginScreen', page: () => LoginScreen()),
+          GetPage(name: '/HomeScreen', page: () => HomeScreen()),
+          GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
+        ]);
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:yam_baba_e_commerce/resources/routes/routes_name.dart';
-import 'package:yam_baba_e_commerce/view/home_screen.dart';
-import 'package:yam_baba_e_commerce/view/signup_screen.dart';
+// import 'package:yam_baba_e_commerce/view/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -39,14 +39,14 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                HomeScreen();
+                Get.toNamed('/HomeScreen');
               },
               child: Text('Login'),
             ),
             Spacer(),
             TextButton(
                 onPressed: () {
-                  SignUpScreen();
+                  Get.toNamed('/SignupScreen');
                 },
                 child: Text("Don't have an account , Sign Up here"))
           ])),
