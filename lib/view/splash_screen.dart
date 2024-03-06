@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:yam_baba_e_commerce/view/login_screen.dart';
-// import 'package:yam_baba_e_commerce/view/login_screen.dart';
+import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,28 +18,25 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       Duration(seconds: 3),
       () {
-        Get.offAll(LoginScreen());
+        Get.offAll(WelcomeScreen());
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset(
-            "assets/images/logo.png",
-            height: 150,
-            width: 130,
-            fit: BoxFit.cover,
-          ),
-          Text(
-            "Yam Baba",
-            style: TextStyle(fontSize: 35, color: Colors.white),
-          ),
-        ]),
+        child: Image.asset(
+          "assets/images/logo.png",
+          height: screenHeight * 0.4,
+          width: screenWidth * 0.6,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
