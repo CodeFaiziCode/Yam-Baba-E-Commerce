@@ -4,6 +4,8 @@ import 'package:yam_baba_e_commerce/view/home_screen.dart';
 import 'package:yam_baba_e_commerce/view/login_screen.dart';
 import 'package:yam_baba_e_commerce/view/signup_screen.dart';
 import 'package:yam_baba_e_commerce/view/splash_screen.dart';
+// import 'package:yam_baba_e_commerce/view/splash_screen.dart';
+import 'package:yam_baba_e_commerce/view/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,9 @@ class MyApp extends StatelessWidget {
         getPages: [
           // AppRoutes.appRoutes()
           GetPage(name: '/', page: () => SplashScreen()),
+          // GetPage(name: '/', page: () => WelcomeScreen()),
+
+          GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
           GetPage(name: '/LoginScreen', page: () => LoginScreen()),
           GetPage(name: '/HomeScreen', page: () => HomeScreen()),
           GetPage(name: '/SignupScreen', page: () => SignUpScreen()),

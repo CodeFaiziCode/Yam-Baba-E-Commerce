@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -33,13 +34,12 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: screenHeight * 0.02),
+            // SizedBox(height: screenHeight * 0.002),
 
-            // Heading "Start Your Shopping Journey Now"
             Text(
               "Start Your Shopping\nJourney Now",
               style: TextStyle(
-                fontSize: 14.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
@@ -50,9 +50,9 @@ class WelcomeScreen extends StatelessWidget {
             // Dummy text (Heading 03)
             Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-              "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "Sed do eiusmod ho haai aliqua.",
               style: TextStyle(
-                fontSize: 16.0,
+                fontSize: 17.0,
                 color: Colors.grey,
               ),
               textAlign: TextAlign.center,
@@ -64,21 +64,45 @@ class WelcomeScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle login button press
-                  },
-                  child: Text("Login"),
-                ),
+                Container(
+                    height: 50,
+                    width: screenWidth * 0.8,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Log In",
+                        style:
+                            TextStyle(fontSize: 20, color: AppColor.blackColor),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust border radius as needed
+                        ),
+                      ),
+                    )),
                 SizedBox(
                     height: screenHeight *
                         0.015), // Adjust the spacing between buttons
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle signup button press
-                  },
-                  child: Text("Signup"),
-                ),
+                Container(
+                    height: 50,
+                    width: screenWidth * 0.8,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Sign Up",
+                        style:
+                            TextStyle(fontSize: 20, color: AppColor.blackColor),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust border radius as needed
+                        ),
+                      ),
+                    )),
               ],
             ),
           ],
@@ -87,87 +111,3 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-
-// class WelcomeScreen extends StatelessWidget {
-//   const WelcomeScreen({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final screenWidth = MediaQuery.of(context).size.width;
-//     final screenHeight = MediaQuery.of(context).size.height;
-
-//     return Scaffold(
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             // Logo in the center of the screen
-//             Container(
-//               width: screenWidth * 0.8,
-//               height: screenHeight * 0.4,
-//               child: Center(
-//                 child: Image.asset(
-//                   "assets/images/logo.png",
-//                   height: screenHeight * 0.3,
-//                   width: screenWidth * 0.5,
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//             ),
-
-//             SizedBox(height: screenHeight * 0.02),
-
-//             // Heading "Start Your Shopping Journey Now"
-//             Text(
-//               "Start Your Shopping\nJourney Now",
-//               style: TextStyle(
-//                 fontSize: 10.0,
-//                 fontWeight: FontWeight.bold,
-//               ),
-//               textAlign: TextAlign.center,
-//             ),
-
-//             SizedBox(height: screenHeight * 0.02),
-
-//             // Dummy text (Heading 03)
-//             Text(
-//               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-//               "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//               style: TextStyle(
-//                 fontSize: 06.0,
-//                 color: Colors.grey,
-//               ),
-//               textAlign: TextAlign.center,
-//             ),
-
-//             SizedBox(height: screenHeight * 0.04),
-
-//             // Login and Signup Buttons (aligned vertically)
-//             ElevatedButton(
-//               onPressed: () {
-//                 // Handle login button press
-//               },
-//               child: Text(
-//                 "Login",
-//               ),
-//             ),
-//             SizedBox(
-//               height: screenHeight * 0.015,
-//             ), // Adjust the spacing between buttons
-//             ElevatedButton(
-//               onPressed: () {
-//                 // Handle signup button press
-//               },
-//               child: Text(
-//                 "Signup",
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
