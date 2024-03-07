@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -19,11 +20,6 @@ class WelcomeScreen extends StatelessWidget {
             Container(
               width: screenWidth * 0.9,
               height: screenHeight * 0.5,
-              // decoration: BoxDecoration(
-              //   shape: BoxShape.circle,
-              //   color: Colors.blue, // Replace with your logo or image
-              // ),
-              // You can replace the child with your logo/image widget
               child: Center(
                 child: Center(
                   child: Image.asset(
@@ -33,9 +29,6 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            // SizedBox(height: screenHeight * 0.002),
-
             Text(
               "Start Your Shopping\nJourney Now",
               style: TextStyle(
@@ -47,7 +40,6 @@ class WelcomeScreen extends StatelessWidget {
 
             SizedBox(height: screenHeight * 0.02),
 
-            // Dummy text (Heading 03)
             Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
               "Sed do eiusmod ho haai aliqua.",
@@ -59,8 +51,6 @@ class WelcomeScreen extends StatelessWidget {
             ),
 
             SizedBox(height: screenHeight * 0.04),
-
-            // Login and Signup Buttons (aligned vertically)
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -68,38 +58,40 @@ class WelcomeScreen extends StatelessWidget {
                     height: 50,
                     width: screenWidth * 0.8,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/LoginScreen');
+                      },
                       child: Text(
                         "Log In",
                         style:
                             TextStyle(fontSize: 20, color: AppColor.blackColor),
                       ),
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white, // Text color
+                        foregroundColor: Colors.white,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10.0), // Adjust border radius as needed
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
                     )),
-                SizedBox(
-                    height: screenHeight *
-                        0.015), // Adjust the spacing between buttons
+                SizedBox(height: screenHeight * 0.015),
                 Container(
                     height: 50,
                     width: screenWidth * 0.8,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/SignupScreen');
+                      },
                       child: Text(
                         "Sign Up",
                         style:
                             TextStyle(fontSize: 20, color: AppColor.blackColor),
                       ),
                       style: ElevatedButton.styleFrom(
+                        elevation: 5.0,
                         foregroundColor: Colors.white, // Text color
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10.0), // Adjust border radius as needed
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
                     )),
