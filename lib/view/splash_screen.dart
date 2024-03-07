@@ -31,11 +31,17 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
-        child: Image.asset(
-          "assets/images/logo.png",
-          height: screenHeight * 0.4,
-          width: screenWidth * 0.6,
-          fit: BoxFit.cover,
+        child: Container(
+          height: screenHeight * 1,
+          width: screenWidth * 0.9,
+          child: Center(
+            child: Image.asset(
+              "assets/images/YambabaLogo.png",
+              // height: screenHeight * 0.8,
+              // width: screenWidth * 0.6,
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
       ),
     );

@@ -4,7 +4,6 @@ import 'package:yam_baba_e_commerce/view/home_screen.dart';
 import 'package:yam_baba_e_commerce/view/login_screen.dart';
 import 'package:yam_baba_e_commerce/view/signup_screen.dart';
 import 'package:yam_baba_e_commerce/view/splash_screen.dart';
-// import 'package:yam_baba_e_commerce/view/splash_screen.dart';
 import 'package:yam_baba_e_commerce/view/welcome_screen.dart';
 
 void main() {

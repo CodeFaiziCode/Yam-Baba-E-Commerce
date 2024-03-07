@@ -17,19 +17,19 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             // Logo in the center of the screen
             Container(
-              width: screenWidth * 0.5,
+              width: screenWidth * 0.9,
               height: screenHeight * 0.5,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blue, // Replace with your logo or image
-              ),
+              // decoration: BoxDecoration(
+              //   shape: BoxShape.circle,
+              //   color: Colors.blue, // Replace with your logo or image
+              // ),
               // You can replace the child with your logo/image widget
               child: Center(
-                child: Image.asset(
-                  "assets/images/logo.png",
-                  height: screenHeight * 0.4,
-                  width: screenWidth * 0.6,
-                  fit: BoxFit.cover,
+                child: Center(
+                  child: Image.asset(
+                    "assets/images/YambabaLogo.png",
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
