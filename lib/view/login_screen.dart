@@ -115,17 +115,25 @@ class LoginScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        // Implement action for the first social login button
-                      },
-                      icon: Icon(Icons.facebook),
+                    Container(
+                      width: screenWidth * 0.4,
+                      color: Color(0xff316FF6),
+                      child: IconButton(
+                        onPressed: () {
+                          // Implement action for the first social login button
+                        },
+                        icon: Icon(Icons.facebook_outlined),
+                      ),
                     ),
-                    IconButton(
-                      onPressed: () {
-                        // Implement action for the second social login button
-                      },
-                      icon: Icon(Icons.facebook),
+                    Container(
+                      width: screenWidth * 0.4,
+                      color: Colors.green,
+                      child: IconButton(
+                        onPressed: () {
+                          // Implement action for the second social login button
+                        },
+                        icon: Icon(Icons.facebook_sharp),
+                      ),
                     ),
                   ],
                 ),

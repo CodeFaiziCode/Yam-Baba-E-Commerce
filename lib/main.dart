@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/",
+        initialRoute: "/SplashScreen",
         getPages: [
           // AppRoutes.appRoutes(),
           GetPage(name: '/SplashScreen', page: () => SplashScreen()),
           GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
-          GetPage(name: '/', page: () => LoginScreen()),
+          GetPage(name: '/LoginScreen', page: () => LoginScreen()),
           GetPage(name: '/HomeScreen', page: () => HomeScreen()),
           GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
         ]);
