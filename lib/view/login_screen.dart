@@ -29,11 +29,11 @@ class _LoginScreenState extends State<LoginScreen> {
           physics: NeverScrollableScrollPhysics(),
           children: [
             Padding(
-              padding: EdgeInsets.all(screenWidth * 0.05),
+              padding: EdgeInsets.all(screenWidth * 0.07),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: screenHeight * 0.13),
+                  SizedBox(height: screenHeight * 0.05),
                   Text(
                     'Welcome Back!',
                     style: TextStyle(
@@ -134,11 +134,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Divider(),
                       ),
                       SizedBox(
-                        width: screenWidth * 0.1,
+                        width: screenWidth * 0.07,
                       ),
-                      Text("Or continue with"),
+                      Text(
+                        "Or continue with",
+                        style: TextStyle(fontSize: 15),
+                      ),
                       SizedBox(
-                        width: screenWidth * 0.1,
+                        width: screenWidth * 0.07,
                       ),
                       Container(
                         width: screenWidth * 0.2,
@@ -146,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: screenHeight * 0.01),
+                  SizedBox(height: screenHeight * 0.03),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
