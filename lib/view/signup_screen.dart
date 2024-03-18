@@ -191,7 +191,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.02),
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.019),
                       child: TextButton(
                         onPressed: () {
                           Get.toNamed('/LoginScreen');
