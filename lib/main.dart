@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
+import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
 import 'package:yam_baba_e_commerce/view/home_screen.dart';
 import 'package:yam_baba_e_commerce/view/login_screen.dart';
 import 'package:yam_baba_e_commerce/view/signup_screen.dart';
@@ -17,9 +19,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/SplashScreen",
+        initialRoute: "/GetStartedScreen",
         getPages: [
           // AppRoutes.appRoutes(),
+
+          GetPage(
+              name: '/ForgotPasswordScreen',
+              page: () => ForgotPasswordScreen()),
+          GetPage(name: '/GetStartedScreen', page: () => GetStartedScreen()),
           GetPage(name: '/SplashScreen', page: () => SplashScreen()),
           GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
           GetPage(name: '/LoginScreen', page: () => LoginScreen()),

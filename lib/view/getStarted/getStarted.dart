@@ -547,7 +547,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../resources/colors/colors.dart';
-import 'Widget/pageIndicator.dart';
+import 'widgets/pageIndicator.dart';
 
 class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({Key? key}) : super(key: key);

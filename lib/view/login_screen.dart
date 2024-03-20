@@ -97,9 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // Implement forgot password action
+                        Get.toNamed("/ForgotPasswordScreen");
                       },
-                      child: Text(
+                      child: const Text(
                         'Forgot Password?',
                         style: TextStyle(color: Colors.blue),
                       ),
