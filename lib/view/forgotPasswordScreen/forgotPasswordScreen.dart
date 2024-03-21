@@ -1,3 +1,95 @@
+// import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+// import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreenModel.dart';
+
+// import '../../resources/colors/colors.dart';
+
+// class ForgotPasswordScreen extends StatefulWidget {
+//   @override
+//   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+// }
+
+// class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+//   final forgotEmail = Get.put(ForgotPasswordScreenModel());
+
+//   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+//   @override
+//   Widget build(BuildContext context) {
+//     final screenWidth = MediaQuery.of(context).size.width;
+//     final screenHeight = MediaQuery.of(context).size.height;
+//     return Scaffold(
+//       appBar: AppBar(),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Text(
+//               'Forgot Password',
+//               style: TextStyle(
+//                 fontSize: 24,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),
+//             SizedBox(height: 10),
+//             Text(
+//               'Please enter your email below to receive your password reset instructions.',
+//               style: TextStyle(
+//                 fontSize: 16,
+//                 color: Colors.grey,
+//               ),
+//             ),
+//             SizedBox(height: 20),
+//             TextFormField(
+//               controller: forgotEmail.emailController.value,
+//               keyboardType: TextInputType.emailAddress,
+//               decoration: InputDecoration(
+//                 filled: true,
+//                 fillColor: AppColor.fieldColor,
+//                 hintText: 'Email',
+//                 border: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(10.0),
+//                 ),
+//               ),
+//               validator: (value) {
+//                 if (value == null || value.isEmpty) {
+//                   return 'Please enter your email';
+//                 }
+//                 if (!RegExp(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+//                     .hasMatch(value)) {
+//                   return 'Please enter a valid email address';
+//                 }
+//                 return null;
+//               },
+//             ),
+//             SizedBox(height: 20),
+//             Center(
+//               child: ElevatedButton(
+//                 onPressed: () {
+//                   if (_formKey.currentState != null &&
+//                       _formKey.currentState!.validate()) {
+//                     // Implement login action
+//                   }
+//                 },
+//                 style: ElevatedButton.styleFrom(
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(12)),
+//                   backgroundColor: Colors.black,
+//                   minimumSize: Size(screenWidth * 0.80, screenHeight * 0.07),
+//                 ),
+//                 child: Text('Login',
+//                     style: TextStyle(
+//                         fontSize: screenWidth * 0.04,
+//                         color: AppColor.whiteColor)),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreenModel.dart';
@@ -20,26 +112,26 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(screenWidth * 0.05),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Forgot Password',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: screenWidth * 0.09,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.02),
             Text(
               'Please enter your email below to receive your password reset instructions.',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: screenWidth * 0.0459,
                 color: Colors.grey,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.03),
             TextFormField(
               controller: forgotEmail.emailController.value,
               keyboardType: TextInputType.emailAddress,
@@ -48,9 +140,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 fillColor: AppColor.fieldColor,
                 hintText: 'Email',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(screenWidth * 0.05),
                 ),
               ),
+              style: TextStyle(fontSize: screenWidth * 0.04),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter your email';
@@ -62,10 +155,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 return null;
               },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.03),
             Center(
               child: ElevatedButton(
                 onPressed: () {
+                  Get.toNamed("/OtpScreen");
+
                   if (_formKey.currentState != null &&
                       _formKey.currentState!.validate()) {
                     // Implement login action
@@ -73,14 +168,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(screenWidth * 0.06)),
                   backgroundColor: Colors.black,
-                  minimumSize: Size(screenWidth * 0.80, screenHeight * 0.07),
+                  minimumSize: Size(screenWidth * 0.8, screenHeight * 0.07),
                 ),
-                child: Text('Login',
-                    style: TextStyle(
-                        fontSize: screenWidth * 0.04,
-                        color: AppColor.whiteColor)),
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                      fontSize: screenWidth * 0.04, color: AppColor.whiteColor),
+                ),
               ),
             ),
           ],
