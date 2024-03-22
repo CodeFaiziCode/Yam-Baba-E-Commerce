@@ -132,6 +132,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OTPScreen extends StatefulWidget {
   @override
@@ -198,11 +199,13 @@ class _OTPScreenState extends State<OTPScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  String otp = _otpControllers
-                      .map((controller) => controller.text)
-                      .join('');
-                  // Add logic to verify OTP
-                  print('Entered OTP: $otp');
+                  // String otp = _otpControllers
+                  //     .map((controller) => controller.text)
+                  //     .join('');
+                  // // Add logic to verify OTP
+                  // print('Entered OTP: $otp');
+
+                  Get.toNamed("/ResetScreen");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
