@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yam_baba_e_commerce/view/welcome_screen.dart';
+import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       Duration(seconds: 3),
       () {
-        Get.offAll(WelcomeScreen());
+        Get.offAll(GetStartedScreen());
       },
     );
   }
