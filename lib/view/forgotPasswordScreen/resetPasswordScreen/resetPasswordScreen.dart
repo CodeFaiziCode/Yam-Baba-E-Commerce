@@ -221,8 +221,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../resources/colors/colors.dart';
-import 'ResetPasswordScreenModel.dart';
+import '../../../resources/colors/colors.dart';
+import '../../resetPasswordScreen/ResetPasswordScreenModel.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   @override
@@ -232,7 +232,7 @@ class ResetPasswordScreen extends StatefulWidget {
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   final forgotEmail = Get.put(ResetPasswordScreenModel());
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _newPasswordController = TextEditingController();
   TextEditingController _confirmPasswordController = TextEditingController();
 
@@ -311,25 +311,27 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState != null &&
-                        _formKey.currentState!.validate()) {
-                      // Check if passwords match
-                      if (_newPasswordController.text ==
-                          _confirmPasswordController.text) {
-                        // Passwords match, proceed with the reset
-                        // You can access the passwords using _newPasswordController.text
-                        // and _confirmPasswordController.text
-                        // Add your reset logic here
-                        print('Passwords matched');
-                      } else {
-                        // Passwords do not match, show error message
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Passwords do not match'),
-                          ),
-                        );
-                      }
-                    }
+                    Get.toNamed("/HomeScreen");
+                    // if (_formKey.currentState != null &&
+                    //     _formKey.currentState!.validate()) {
+                    //   // Check if passwords match
+                    //   if (_newPasswordController.text ==
+                    //       _confirmPasswordController.text) {
+                    //     Get.toNamed("/HomeScreen");
+                    //     // Passwords match, proceed with the reset
+                    //     // You can access the passwords using _newPasswordController.text
+                    //     // and _confirmPasswordController.text
+                    //     // Add your reset logic here
+                    //     print('Passwords matched');
+                    //   } else {
+                    //     // Passwords do not match, show error message
+                    //     ScaffoldMessenger.of(context).showSnackBar(
+                    //       SnackBar(
+                    //         content: Text('Passwords do not match'),
+                    //       ),
+                    //     );
+                    //   }
+                    // }
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

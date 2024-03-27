@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
 import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
-import 'package:yam_baba_e_commerce/view/home_screen.dart';
-import 'package:yam_baba_e_commerce/view/login_screen.dart';
-import 'package:yam_baba_e_commerce/view/otpScreen.dart/otpScreen.dart';
-import 'package:yam_baba_e_commerce/view/resetPasswordScreen/resetPasswordScreen.dart';
-import 'package:yam_baba_e_commerce/view/signup_screen.dart';
-import 'package:yam_baba_e_commerce/view/splash_screen.dart';
-import 'package:yam_baba_e_commerce/view/welcome_screen.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/home_screen.dart';
+import 'package:yam_baba_e_commerce/view/loginScreen/login_screen.dart';
+import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/otpScreen.dart/otpScreen.dart';
+import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/resetPasswordScreen/resetPasswordScreen.dart';
+import 'package:yam_baba_e_commerce/view/signupScreen/signup_screen.dart';
+import 'package:yam_baba_e_commerce/view/splashScreen/splash_screen.dart';
+import 'package:yam_baba_e_commerce/view/welcomeScreen/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());

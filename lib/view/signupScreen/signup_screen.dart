@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
-import 'package:yam_baba_e_commerce/view_model/login_screen_model.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key});
+import 'signup_screen_model.dart';
+
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final loginSM = Get.put(loginScreenModel());
+class _SignUpScreenState extends State<SignUpScreen> {
+  final signUpSM =
+      Get.put(signUpScreenModel()); // Assuming you have a SignUpScreenModel
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -35,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   SizedBox(height: screenHeight * 0.05),
                   Text(
-                    'Welcome Back!',
+                    'Welcome!',
                     style: TextStyle(
                       fontSize: screenWidth * 0.09,
                       fontWeight: FontWeight.bold,
@@ -43,14 +45,33 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: screenHeight * 0.001),
                   Text(
-                    'Sign in to your account',
+                    'Sign up for your account',
                     style: TextStyle(
                         fontSize: screenWidth * 0.04,
                         color: AppColor.blackColor),
                   ),
                   SizedBox(height: screenHeight * 0.1),
                   TextFormField(
-                    controller: loginSM.emailController.value,
+                    controller: signUpSM.usernameController.value,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: AppColor.fieldColor,
+                      hintText: 'Username',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your username';
+                      }
+                      // Add additional username validation if needed
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: screenHeight * 0.026),
+                  TextFormField(
+                    controller: signUpSM.emailController.value,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       filled: true,
@@ -74,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: screenHeight * 0.026),
                   TextFormField(
-                    controller: loginSM.passwordController.value,
+                    controller: signUpSM.passwordController.value,
                     obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
@@ -92,25 +113,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  SizedBox(height: screenHeight * 0.001),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {
-                        Get.toNamed("/ForgotPasswordScreen");
-                      },
-                      child: const Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: screenHeight * 0.03),
+                  SizedBox(height: screenHeight * 0.035),
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          // Implement login action
+                          // Implement sign-up action
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -120,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         minimumSize:
                             Size(screenWidth * 0.80, screenHeight * 0.07),
                       ),
-                      child: Text('Login',
+                      child: Text('Sign Up',
                           style: TextStyle(
                               fontSize: screenWidth * 0.04,
                               color: AppColor.whiteColor)),
@@ -183,13 +191,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.02),
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.019),
                       child: TextButton(
                         onPressed: () {
-                          Get.toNamed('/SignupScreen');
-                          // Implement action for "Not a member? Join Now"
+                          Get.toNamed('/LoginScreen');
+                          // Implement action for "Already a member? Login"
                         },
-                        child: Text('Not a member? Join Now'),
+                        child: Text('Already a member? Login'),
                       ),
                     ),
                   ),
