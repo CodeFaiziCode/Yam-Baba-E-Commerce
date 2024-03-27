@@ -33,9 +33,26 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              leading: Icon(Icons.home),
+              title: Text('Home'),
               onTap: () {},
             ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Profiles'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.shopping_cart),
+              title: Text('My Orders'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.location_on),
+              title: Text('Track Your Orders'),
+              onTap: () {},
+            ),
+
             // Add more ListTiles for other items in the drawer
           ],
         ),
