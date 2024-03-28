@@ -209,6 +209,7 @@
 
 // Import necessary packages if not already imported
 import 'package:flutter/material.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/NavigationBar/customNavBar.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/widget/appDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -228,7 +229,8 @@ class _HomeScreenState extends State<HomeScreen> {
     // Categories screen
     CategoriesScreen(),
     // Promotions screen
-    PromotionsScreen(),
+    CartScreen(),
+    ProfileScreen()
   ];
 
   // Function to handle tab selection
@@ -256,24 +258,30 @@ class _HomeScreenState extends State<HomeScreen> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: BottomNavigationBar(
-              currentIndex: _selectedIndex,
-              onTap: _onItemTapped,
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.category),
-                  label: 'Categories',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.local_offer),
-                  label: 'Promotions',
-                ),
-              ],
-            ),
+            child: CustomNavBar(
+                currentIndex: _selectedIndex, onTap: _onItemTapped),
+            // child: BottomNavigationBar(
+            //   currentIndex: _selectedIndex,
+            //   onTap: _onItemTapped,
+            //   items: const <BottomNavigationBarItem>[
+            //     BottomNavigationBarItem(
+            //       icon: Icon(Icons.home),
+            //       label: 'Home',
+            //     ),
+            //     BottomNavigationBarItem(
+            //       icon: Icon(Icons.category_rounded),
+            //       label: 'Categories',
+            //     ),
+            //     BottomNavigationBarItem(
+            //       icon: Icon(Icons.shopping_cart),
+            //       label: 'Cart',
+            //     ),
+            //     BottomNavigationBarItem(
+            //       icon: Icon(Icons.account_box),
+            //       label: 'Profile',
+            //     ),
+            //   ],
+            // ),
           ),
         ],
       ),
@@ -302,11 +310,20 @@ class CategoriesScreen extends StatelessWidget {
 }
 
 // Placeholder widget for Promotions screen
-class PromotionsScreen extends StatelessWidget {
+class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Promotions Screen"),
+      child: Text("Cart Screen"),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text("Profile Screen"),
     );
   }
 }
