@@ -222,7 +222,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../resources/colors/colors.dart';
-import '../../resetPasswordScreen/ResetPasswordScreenModel.dart';
+// import '../../resetPasswordScreen/ResetPasswordScreenModel.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   @override
@@ -230,7 +230,7 @@ class ResetPasswordScreen extends StatefulWidget {
 }
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
-  final forgotEmail = Get.put(ResetPasswordScreenModel());
+  // final forgotEmail = Get.put(ResetPasswordScreenModel());
 
   // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _newPasswordController = TextEditingController();
