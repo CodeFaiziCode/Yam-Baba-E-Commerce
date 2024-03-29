@@ -119,6 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           // Implement sign-up action
+                          Get.toNamed("/PhoneNoRegistration");
                         }
                       },
                       style: ElevatedButton.styleFrom(

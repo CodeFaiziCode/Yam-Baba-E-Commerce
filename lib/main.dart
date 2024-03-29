@@ -10,6 +10,8 @@ import 'package:yam_baba_e_commerce/view/signupScreen/signup_screen.dart';
 import 'package:yam_baba_e_commerce/view/splashScreen/splash_screen.dart';
 import 'package:yam_baba_e_commerce/view/welcomeScreen/welcome_screen.dart';
 
+import 'view/signupScreen/phoneNoRegisteration/phoneNoRegistration.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -29,6 +31,9 @@ class MyApp extends StatelessWidget {
               name: '/ForgotPasswordScreen',
               page: () => ForgotPasswordScreen()),
           GetPage(name: '/OtpScreen', page: () => OTPScreen()),
+          GetPage(
+              name: '/PhoneNoRegistration',
+              page: () => MobileNumberRegistrationScreen()),
           GetPage(name: '/ResetScreen', page: () => ResetPasswordScreen()),
           GetPage(name: '/GetStartedScreen', page: () => GetStartedScreen()),
           GetPage(name: '/SplashScreen', page: () => SplashScreen()),
