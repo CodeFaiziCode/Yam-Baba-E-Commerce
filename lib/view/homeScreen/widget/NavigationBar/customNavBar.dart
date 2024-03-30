@@ -16,6 +16,7 @@ class CustomNavBar extends StatelessWidget {
       left: 0,
       right: 0,
       child: BottomNavigationBar(
+        fixedColor: Colors.black,
         currentIndex: currentIndex,
         onTap: onTap,
         items: const <BottomNavigationBarItem>[
@@ -28,13 +29,13 @@ class CustomNavBar extends StatelessWidget {
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_offer),
-            label: 'Promotions',
+            icon: Icon(Icons.trolley),
+            label: 'Cart',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
-            label: 'Profile',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.account_box),
+          //   label: 'Profile',
+          // ),
         ],
       ),
     );

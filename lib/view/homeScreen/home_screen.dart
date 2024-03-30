@@ -210,7 +210,11 @@
 // Import necessary packages if not already imported
 import 'package:flutter/material.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/widget/NavigationBar/customNavBar.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/appDrawer.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/AppDrawer/appDrawer.dart';
+
+import '../CartScreen/cartScreen.dart';
+import '../CateogoriesScreen/categoriesScreen.dart';
+// import '../ProfileScreen/profileScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -230,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
     CategoriesScreen(),
     // Promotions screen
     CartScreen(),
-    ProfileScreen()
+    // ProfileScreen()
   ];
 
   // Function to handle tab selection
@@ -252,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           // Displaying the selected screen based on the current index
-          _screens[_selectedIndex],
+
           // Positioned the BottomNavigationBar at the bottom of the screen
           Positioned(
             bottom: 0,
@@ -283,6 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //   ],
             // ),
           ),
+          _screens[_selectedIndex],
         ],
       ),
     );
@@ -295,35 +300,6 @@ class FeaturedProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text("Featured Products Screen"),
-    );
-  }
-}
-
-// Placeholder widget for Categories screen
-class CategoriesScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text("Categories Screen"),
-    );
-  }
-}
-
-// Placeholder widget for Promotions screen
-class CartScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text("Cart Screen"),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text("Profile Screen"),
     );
   }
 }
