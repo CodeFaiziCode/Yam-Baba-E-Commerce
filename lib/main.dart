@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/TrackOrder/trackOrderScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
 import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/home_screen.dart';
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
           GetPage(name: '/LoginScreen', page: () => LoginScreen()),
           GetPage(name: '/HomeScreen', page: () => HomeScreen()),
+          GetPage(name: '/TrackOrderScreen', page: () => TrackOrderScreen()),
+
           GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
         ]);
   }

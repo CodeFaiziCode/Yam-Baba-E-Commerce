@@ -67,6 +67,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/components/blackButton.dart';
 
 // Custom Drawer widget
@@ -110,7 +111,9 @@ class AppDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.location_on),
                   title: Text('Track Your Orders'),
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed("/TrackOrderScreen");
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.help_rounded),
@@ -134,7 +137,9 @@ class AppDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: BlackButton(
                 text: "Log out",
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed("/LoginScreen");
+                },
                 backgroundColor: Colors.black,
               ))
         ],
