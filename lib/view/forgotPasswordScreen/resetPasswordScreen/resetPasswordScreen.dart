@@ -311,7 +311,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.toNamed("/HomeScreen");
+                    Get.toNamed("/NavigationMenu");
                     // if (_formKey.currentState != null &&
                     //     _formKey.currentState!.validate()) {
                     //   // Check if passwords match

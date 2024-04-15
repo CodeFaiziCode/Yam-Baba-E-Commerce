@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/ProfileScreen/profileScreen.dart';
 import 'package:yam_baba_e_commerce/view/TrackOrder/trackOrderScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
 import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
@@ -11,6 +12,7 @@ import 'package:yam_baba_e_commerce/view/signupScreen/signup_screen.dart';
 import 'package:yam_baba_e_commerce/view/splashScreen/splash_screen.dart';
 import 'package:yam_baba_e_commerce/view/welcomeScreen/welcome_screen.dart';
 
+import 'resources/components/navigationBar.dart';
 import 'view/signupScreen/phoneNoRegisteration/phoneNoRegistration.dart';
 
 void main() {
@@ -41,8 +43,9 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
           GetPage(name: '/LoginScreen', page: () => LoginScreen()),
           GetPage(name: '/HomeScreen', page: () => HomeScreen()),
+          GetPage(name: '/NavigationMenu', page: () => NavigationMenu()),
           GetPage(name: '/TrackOrderScreen', page: () => TrackOrderScreen()),
-
+          GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
           GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
         ]);
   }

@@ -96,12 +96,16 @@ class AppDrawer extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.home),
                   title: Text('Home'),
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed("/HomeScreen");
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.person),
                   title: Text('Profiles'),
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed("/ProfileScreen");
+                  },
                 ),
                 ListTile(
                   leading: Icon(Icons.shopping_cart),

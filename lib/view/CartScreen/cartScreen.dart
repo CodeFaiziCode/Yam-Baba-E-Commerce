@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../homeScreen/widget/AppDrawer/appDrawer.dart';
+
 class CartScreen extends StatefulWidget {
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -8,8 +10,13 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Cart Screen"),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+          title: Text("Cart Screen"),
+        ),
+        drawer: AppDrawer(),
+        body: Column());
   }
 }
