@@ -305,6 +305,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'widget/AppDrawer/appDrawer.dart';
 
@@ -320,11 +321,62 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
-          centerTitle: true,
-          title: Text("Yam Baba"),
-        ),
+            backgroundColor: Colors.transparent,
+            // title: Text("YamBaba"),
+            actions: [
+              Image.asset(
+                "assets/images/YambabaLogo.png",
+                fit: BoxFit.cover,
+              )
+            ]
+            // flexibleSpace: Center(
+            //   child:
+            //       Image.asset("assets/images/YambabaLogo.png", fit: BoxFit.cover),
+            // ),
+            ),
         drawer: AppDrawer(),
-        body: Column());
+        body: Column(children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search',
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    // Perform search action
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.mic),
+                  onPressed: () {
+                    // Perform voice search action
+                  },
+                ),
+              ],
+            ),
+          )
+        ]));
   }
 }
