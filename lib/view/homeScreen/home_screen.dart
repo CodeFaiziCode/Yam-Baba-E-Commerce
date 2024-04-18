@@ -306,6 +306,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'widget/AppDrawer/appDrawer.dart';
 
@@ -321,62 +322,82 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            // title: Text("YamBaba"),
-            actions: [
-              Image.asset(
-                "assets/images/YambabaLogo.png",
-                fit: BoxFit.cover,
-              )
-            ]
-            // flexibleSpace: Center(
-            //   child:
-            //       Image.asset("assets/images/YambabaLogo.png", fit: BoxFit.cover),
-            // ),
+          backgroundColor: Colors.transparent,
+          // title: Text("YamBaba"),
+          // actions: [
+          //   Image.asset(
+          //     "assets/images/YambabaLogo.png",
+          //     fit: BoxFit.cover,
+          //   )
+          // ]
+          flexibleSpace: Container(
+            margin: EdgeInsets.only(top: 50, left: 20),
+            height: 43,
+            width: 50,
+            child: Center(
+              child: Image.asset("assets/images/YambabaLogo.png",
+                  fit: BoxFit.cover),
             ),
+          ),
+        ),
         drawer: AppDrawer(),
-        body: Column(children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Search',
-                        border: InputBorder.none,
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 20, right: 15),
+              padding: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(36),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 10,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: TextField(
+                        style: TextStyle(fontSize: 17),
+                        decoration: InputDecoration(
+                          hintText: 'Search',
+                          border: InputBorder.none,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    // Perform search action
-                  },
-                ),
-                IconButton(
-                  icon: Icon(Icons.mic),
-                  onPressed: () {
-                    // Perform voice search action
-                  },
-                ),
-              ],
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      // Perform search action
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.mic),
+                    onPressed: () {
+                      // Perform voice search action
+                    },
+                  ),
+                  IconButton(
+                      onPressed: () {}, icon: FaIcon(FontAwesomeIcons.sliders))
+                ],
+              ),
             ),
-          )
-        ]));
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 170,
+              width: 360,
+              color: Colors.grey,
+            )
+          ]),
+        ));
   }
 }
