@@ -304,14 +304,117 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+// import 'widget/AppDrawer/appDrawer.dart';
+
+// class HomeScreen extends StatefulWidget {
+//   const HomeScreen({super.key});
+
+//   @override
+//   State<HomeScreen> createState() => _HomeScreenState();
+// }
+
+// class _HomeScreenState extends State<HomeScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         appBar: AppBar(
+//           backgroundColor: Colors.transparent,
+//           // title: Text("YamBaba"),
+//           // actions: [
+//           //   Image.asset(
+//           //     "assets/images/YambabaLogo.png",
+//           //     fit: BoxFit.cover,
+//           //   )
+//           // ]
+//           flexibleSpace: Container(
+//             margin: EdgeInsets.only(top: 50, left: 20),
+//             height: 43,
+//             width: 50,
+//             child: Center(
+//               child: Image.asset("assets/images/YambabaLogo.png",
+//                   fit: BoxFit.cover),
+//             ),
+//           ),
+//         ),
+//         drawer: AppDrawer(),
+//         body: SingleChildScrollView(
+//           child: Column(children: [
+//             Container(
+//               margin: EdgeInsets.only(top: 10, left: 20, right: 15),
+//               padding: EdgeInsets.all(4),
+//               decoration: BoxDecoration(
+//                 color: Colors.white,
+//                 borderRadius: BorderRadius.circular(36),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.grey.withOpacity(0.5),
+//                     spreadRadius: 3,
+//                     blurRadius: 10,
+//                     offset: Offset(0, 3), // changes position of shadow
+//                   ),
+//                 ],
+//               ),
+//               child: Row(
+//                 children: [
+//                   Expanded(
+//                     child: Padding(
+//                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
+//                       child: TextField(
+//                         style: TextStyle(fontSize: 17),
+//                         decoration: InputDecoration(
+//                           hintText: 'Search',
+//                           border: InputBorder.none,
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   IconButton(
+//                     icon: Icon(Icons.search),
+//                     onPressed: () {
+//                       // Perform search action
+//                     },
+//                   ),
+//                   IconButton(
+//                     icon: Icon(Icons.mic),
+//                     onPressed: () {
+//                       // Perform voice search action
+//                     },
+//                   ),
+//                   IconButton(
+//                       onPressed: () {}, icon: FaIcon(FontAwesomeIcons.sliders))
+//                 ],
+//               ),
+//             ),
+//             SizedBox(
+//               height: 20,
+//             ),
+//             Container(
+//               height: 180,
+//               width: 360,
+//               color: Colors.grey,
+//             ),
+//             Container(
+//               height: 100,
+//               color: Colors.yellow,
+//               width: 100,
+//             )
+//           ]),
+//         ));
+//   }
+// }
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'widget/AppDrawer/appDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -320,41 +423,44 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          // title: Text("YamBaba"),
-          // actions: [
-          //   Image.asset(
-          //     "assets/images/YambabaLogo.png",
-          //     fit: BoxFit.cover,
-          //   )
-          // ]
-          flexibleSpace: Container(
-            margin: EdgeInsets.only(top: 50, left: 20),
-            height: 43,
-            width: 50,
-            child: Center(
-              child: Image.asset("assets/images/YambabaLogo.png",
-                  fit: BoxFit.cover),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          margin: EdgeInsets.only(
+              top: screenHeight * 0.06, left: screenWidth * 0.056),
+          height: screenHeight * 0.048,
+          width: screenWidth * 0.2,
+          child: Center(
+            child: Image.asset(
+              "assets/images/YambabaLogo.png",
+              fit: BoxFit.cover,
             ),
           ),
         ),
-        drawer: AppDrawer(),
-        body: SingleChildScrollView(
-          child: Column(children: [
+      ),
+      drawer: AppDrawer(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: screenHeight * 0.009,
+            ),
             Container(
-              margin: EdgeInsets.only(top: 10, left: 20, right: 15),
-              padding: EdgeInsets.all(4),
+              margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
+              padding: EdgeInsets.all(screenWidth * 0.009),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(36),
+                borderRadius: BorderRadius.circular(screenWidth * 0.1),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 10,
-                    offset: Offset(0, 3), // changes position of shadow
+                    spreadRadius: screenWidth * 0.0000001,
+                    blurRadius: screenWidth * 0.01,
+                    // offset: Offset(0, screenWidth * 0.03),
                   ),
                 ],
               ),
@@ -362,9 +468,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.023),
                       child: TextField(
-                        style: TextStyle(fontSize: 17),
+                        style: TextStyle(fontSize: screenWidth * 0.042),
                         decoration: InputDecoration(
                           hintText: 'Search',
                           border: InputBorder.none,
@@ -385,19 +492,47 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                   IconButton(
-                      onPressed: () {}, icon: FaIcon(FontAwesomeIcons.sliders))
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.sliders),
+                  ),
                 ],
               ),
             ),
             SizedBox(
-              height: 20,
+              height: screenHeight * 0.02,
             ),
             Container(
-              height: 170,
-              width: 360,
+              height: screenHeight * 0.22,
+              width: screenWidth * 0.9,
               color: Colors.grey,
-            )
-          ]),
-        ));
+            ),
+            SizedBox(
+              height: screenHeight * 0.009,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 15),
+              child: Row(
+                children: [
+                  Text(
+                    "Categories",
+                    style: TextStyle(fontSize: screenHeight * 0.03),
+                  ),
+                  Spacer(),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text("See All",
+                          style: TextStyle(fontSize: screenHeight * 0.0175)))
+                ],
+              ),
+            ),
+            Container(
+              height: screenHeight * 0.10,
+              width: screenWidth * 0.9,
+              color: Colors.lightBlue,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
