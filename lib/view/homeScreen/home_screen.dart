@@ -407,10 +407,12 @@
 //   }
 // }
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/Slider/slider.dart';
 import 'widget/AppDrawer/appDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -502,9 +504,26 @@ class _HomeScreenState extends State<HomeScreen> {
               height: screenHeight * 0.02,
             ),
             Container(
+              child: CarouselSlider(items: const [
+                HomeSlider(
+                  isNetworkImage: false,
+                  imageUrl: "assets/images/YambabaLogo.png",
+                ),
+                HomeSlider(
+                  isNetworkImage: false,
+                  imageUrl: "assets/images/logo.png",
+                ),
+                HomeSlider(
+                  isNetworkImage: false,
+                  imageUrl: "assets/images/YambabaLogo.png",
+                ),
+                HomeSlider(
+                  isNetworkImage: false,
+                  imageUrl: "assets/images/logo.png",
+                ),
+              ], options: CarouselOptions(viewportFraction: 1)),
               height: screenHeight * 0.22,
               width: screenWidth * 0.9,
-              color: Colors.grey,
             ),
             SizedBox(
               height: screenHeight * 0.009,
