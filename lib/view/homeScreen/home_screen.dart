@@ -548,6 +548,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: screenHeight * 0.10,
               width: screenWidth * 0.9,
               color: Colors.lightBlue,
+              child: SingleChildScrollView(
+                child: Row(),
+              ),
             ),
           ],
         ),
