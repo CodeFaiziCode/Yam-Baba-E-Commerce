@@ -26,7 +26,7 @@ class HomeSlider extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(10),
           child: Image(
             image: isNetworkImage
                 ? NetworkImage(imageUrl)
