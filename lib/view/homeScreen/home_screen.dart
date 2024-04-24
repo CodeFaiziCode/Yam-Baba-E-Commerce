@@ -520,7 +520,57 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          horizontalCateogorySlider()
+          horizontalCateogorySlider(),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 15),
+            child: Row(
+              children: [
+                Text(
+                  "Mega Deals",
+                  style: TextStyle(fontSize: screenHeight * 0.03),
+                ),
+                Spacer(),
+                TextButton(
+                    onPressed: () {},
+                    child: Text("See All",
+                        style: TextStyle(fontSize: screenHeight * 0.0175))),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          // GridView.builder(
+          //     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          //       maxCrossAxisExtent: 100,
+          //       mainAxisSpacing: 5.0,
+          //       crossAxisSpacing: 5.0,
+          //     ),
+          //     itemCount: 4,
+          //     itemBuilder: (BuildContext context, int index) {
+          //       return Container(
+          //         color: Colors.black,
+          //         height: 50,
+          //         width: 20,
+          //       );
+          //     },
+          //     scrollDirection: Axis.horizontal)
+          // GridView.builder(
+          //   padding: EdgeInsets.all(8.0),
+          //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          //     maxCrossAxisExtent: 200,
+          //     mainAxisSpacing: 8.0,
+          //     crossAxisSpacing: 8.0,
+          //   ),
+          //   itemCount: 4,
+          //   itemBuilder: (BuildContext context, int index) {
+          //     return Container(
+          //       color: Colors.black,
+          //     );
+          //   },
+          //   scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          // ),
+          // ProductCard(),
         ])));
   }
 }
