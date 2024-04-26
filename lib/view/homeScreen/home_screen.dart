@@ -569,6 +569,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
+import 'widget/ProductCard/productCard.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
 
 // Define a Product class to represent product data
@@ -745,48 +746,43 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 itemCount: products.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return _buildProductCard(products[index]);
+                  return buildProductCard(products[index]);
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 23, right: 15),
+              child: Row(
+                children: [
+                  Text(
+                    "Recommended",
+                    style: TextStyle(fontSize: screenHeight * 0.03),
+                  ),
+                  Spacer(),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text("See All",
+                          style: TextStyle(fontSize: screenHeight * 0.0175))),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75, // Adjust aspect ratio as needed
+                ),
+                itemCount: products.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return buildProductCard(products[index]);
                 },
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildProductCard(Product product) {
-    return Card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            product.imageUrl,
-            height: 120,
-            width: double.infinity,
-            fit: BoxFit.contain,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  product.name,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 4),
-                Text(
-                  '\$${product.price.toStringAsFixed(2)}',
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
