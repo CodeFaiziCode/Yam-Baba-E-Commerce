@@ -22,25 +22,21 @@ class ProductCard extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 50,
-            spreadRadius: 7,
-            offset: const Offset(0, 2))
-      ]),
-      width: screenWidth * 0.5,
-      height: screenHeight * 0.25,
-      child: Container(
-        width: screenWidth * 0.45,
-        height: screenHeight * 0.2,
-        padding: padding,
-        margin: margin,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius),
-        ),
-        child: child,
+      width: screenWidth * 0.45,
+      height: screenHeight * 0.2,
+      padding: padding,
+      margin: margin,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+              color: Colors.grey.shade300,
+              blurRadius: 50,
+              spreadRadius: 7,
+              offset: const Offset(0, 2))
+        ],
+        borderRadius: BorderRadius.circular(radius),
       ),
+      child: child,
     );
   }
 }
