@@ -565,7 +565,9 @@
 // // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/MegaDeals/megaDeals.dart';
 
 import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
@@ -593,7 +595,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Sample product data
   final List<Product> products = [
     Product(
       name: 'Product 1',
@@ -616,6 +617,7 @@ class _HomeScreenState extends State<HomeScreen> {
       price: 14.99,
     ),
   ];
+  // Sample product data
 
   @override
   Widget build(BuildContext context) {
@@ -735,21 +737,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.75, // Adjust aspect ratio as needed
-                ),
-                itemCount: products.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return buildProductCard(products[index]);
-                },
-              ),
-            ),
+            MegaDeals(),
             Padding(
               padding: const EdgeInsets.only(left: 23, right: 15),
               child: Row(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/CateogoriesScreen/categoriesScreen.dart';
 import 'package:yam_baba_e_commerce/view/ProfileScreen/profileScreen.dart';
 import 'package:yam_baba_e_commerce/view/TrackOrder/trackOrderScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/TrackOrderScreen', page: () => TrackOrderScreen()),
           GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
           GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
+          GetPage(name: '/CategoryScreen', page: () => CategoriesScreen()),
         ]);
   }
 }
