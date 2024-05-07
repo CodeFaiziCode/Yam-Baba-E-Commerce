@@ -96,7 +96,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:yam_baba_e_commerce/resources/components/blackButton.dart';
 
 class MobileNumberRegistrationScreen extends StatefulWidget {
-  const MobileNumberRegistrationScreen({Key? key}) : super(key: key);
+  const MobileNumberRegistrationScreen({super.key});
 
   @override
   State<MobileNumberRegistrationScreen> createState() =>
