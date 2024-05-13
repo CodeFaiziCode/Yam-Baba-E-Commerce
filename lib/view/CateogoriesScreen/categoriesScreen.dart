@@ -136,7 +136,9 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+
+import '../../resources/components/navigationBar.dart';
 
 class CategoryItem extends StatelessWidget {
   final String imageUrl;
@@ -149,35 +151,40 @@ class CategoryItem extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(50),
-      child: Container(
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
         color: Color.fromRGBO(238, 250, 255, 1),
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Image.asset(
-                height: screenHeight * 0.14,
-                width: screenWidth * 0.30,
-                "assets/images/cat.png",
-                fit: BoxFit.cover,
+      ),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Image.asset(
+              imageUrl, // Your image asset path
+              height: screenHeight * 0.125, // Adjust the image height
+              width: screenWidth * 0.25, // Adjust the image width
+              fit: BoxFit.cover,
+            ),
+          ),
+          // SizedBox(height: 10.0), // Add space between image and text
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 17.0, // Increase text font size
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+                overflow:
+                    TextOverflow.ellipsis, // Show ellipsis if text overflows
+                maxLines: 2, // Limit text to 2 lines
               ),
             ),
-            // SizedBox(
-            //   height: 10,
-            // ),
-            // Text("Shoes")
-            // SizedBox(height: 5.0),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -198,24 +205,45 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         backgroundColor: Colors.transparent,
         // centerTitle: true,
         title: Text("Categories"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Get.back(); // Navigate back to previous screen (NavigationMenu)
+            final controller = Get.find<
+                NavigationController>(); // Find the NavigationController
+            controller.selectedIndex.value = 0;
+          },
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(right: 25, left: 25),
+        padding: const EdgeInsets.only(right: 25, left: 25, top: 10),
         child: GridView.count(
           mainAxisSpacing: 20,
           crossAxisCount: 2,
           crossAxisSpacing: 20,
           children: [
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes"),
-            CategoryItem(imageUrl: "assets/images/cat.png", title: "shoes")
+            GestureDetector(
+                onTap: () => Get.toNamed('/FashionScreen'),
+                child: CategoryItem(
+                    imageUrl: "assets/images/logo.png", title: "Fashion")),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png",
+                title: "Electronics & Mobiles"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Watches & Glasses"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Jewellery"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Sports & Outdoor"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Bath Beauty"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Home Appliances"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Bath Maternity"),
+            CategoryItem(imageUrl: "assets/images/logo.png", title: "Grocery"),
+            CategoryItem(
+                imageUrl: "assets/images/logo.png", title: "Pet Supplies"),
           ],
         ),
       ),

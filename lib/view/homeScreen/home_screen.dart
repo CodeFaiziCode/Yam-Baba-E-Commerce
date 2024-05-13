@@ -567,8 +567,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/widget/MegaDeals/megaDeals.dart';
 
+import '../../resources/components/navigationBar.dart';
 import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
 import 'widget/ProductCard/productCard.dart';
@@ -710,7 +712,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Handle 'See All' button tap
+                      final controller = Get.find<
+                          NavigationController>(); // Find the NavigationController
+                      controller.selectedIndex.value = 1;
                     },
                     child: Text(
                       "See All",
