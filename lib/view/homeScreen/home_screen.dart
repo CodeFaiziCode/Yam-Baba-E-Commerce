@@ -569,11 +569,13 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/widget/MegaDeals/megaDeals.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/ProductCard/productCard.dart';
+// import 'package:yam_baba_e_commerce/view/homeScreen/widget/ProductCard/productCard.dart';
 
 import '../../resources/components/navigationBar.dart';
 import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
-import 'widget/ProductCard/productCard.dart';
+// import 'widget/ProductCard/productCard.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
 
 // Define a Product class to represent product data
@@ -581,9 +583,11 @@ class Product {
   final String name;
   final String imageUrl;
   final double price;
+  final String description;
 
   Product({
     required this.name,
+    required this.description,
     required this.imageUrl,
     required this.price,
   });
@@ -602,21 +606,25 @@ class _HomeScreenState extends State<HomeScreen> {
       name: 'Product 1',
       imageUrl: 'assets/images/logo.png',
       price: 19.99,
+      description: 'This is the description for product 2',
     ),
     Product(
       name: 'Product 2',
       imageUrl: 'assets/images/logo.png',
       price: 29.99,
+      description: 'This is the description for product 2',
     ),
     Product(
       name: 'Product 3',
       imageUrl: 'assets/images/logo.png',
       price: 24.99,
+      description: 'This is the description for product 2',
     ),
     Product(
       name: 'Product 4',
       imageUrl: 'assets/images/logo.png',
       price: 14.99,
+      description: 'This is the description for product 2',
     ),
   ];
   // Sample product data
@@ -761,6 +769,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: GridView.builder(
+                // scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
