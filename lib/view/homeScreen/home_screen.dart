@@ -32,8 +32,7 @@ class ProductCardWidget extends StatelessWidget {
       width: 150.0,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius:
-            BorderRadius.all(Radius.circular(10.0)), // Round all four sides
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -90,25 +89,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final List<Product> products = [
     Product(
-      name: 'Product 1',
+      name: 'Lipstick Red',
       imageUrl: 'assets/images/product3.jpg',
       price: 19.99,
       description: 'This is the description for product 1',
     ),
     Product(
-      name: 'Product 2',
+      name: 'Lipstick Blue',
       imageUrl: 'assets/images/product2.jpg',
       price: 29.99,
       description: 'This is the description for product 2',
     ),
     Product(
-      name: 'Product 3',
+      name: 'Lipstick Green',
       imageUrl: 'assets/images/product1.jpg',
       price: 24.99,
       description: 'This is the description for product 3',
     ),
     Product(
-      name: 'Product 4',
+      name: 'Lipstick Black',
       imageUrl: 'assets/images/product4.jpg',
       price: 14.99,
       description: 'This is the description for product 4',
@@ -227,6 +226,46 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Text(
                         "Mega Deals",
+                        style: TextStyle(fontSize: screenHeight * 0.03),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "See All",
+                          style: TextStyle(fontSize: screenHeight * 0.0175),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 200,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        return ProductCardWidget(
+                          product: products[index],
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Recomended product
+
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Recomended",
                         style: TextStyle(fontSize: screenHeight * 0.03),
                       ),
                       const Spacer(),
