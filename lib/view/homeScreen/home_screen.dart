@@ -1,584 +1,11 @@
-// // // // // import 'package:flutter/material.dart';
-
-// // // // // class HomeScreen extends StatefulWidget {
-// // // // //   const HomeScreen({Key? key}) : super(key: key);
-
-// // // // //   @override
-// // // // //   State<HomeScreen> createState() => _HomeScreenState();
-// // // // // }
-
-// // // // // class _HomeScreenState extends State<HomeScreen> {
-// // // // //   @override
-// // // // //   Widget build(BuildContext context) {
-// // // // //     return Scaffold(
-// // // // //       appBar: AppBar(
-// // // // //         backgroundColor: Colors.blue,
-// // // // //         centerTitle: true,
-// // // // //         title: Text("Yam Baba"),
-// // // // //       ),
-// // // // //       drawer: Drawer(
-// // // // //         child: ListView(
-// // // // //           padding: EdgeInsets.zero,
-// // // // //           children: <Widget>[
-// // // // //             DrawerHeader(
-// // // // //               decoration: BoxDecoration(
-// // // // //                 color: Colors.blue,
-// // // // //               ),
-// // // // //               child: Text(
-// // // // //                 'Welcome User',
-// // // // //                 style: TextStyle(
-// // // // //                   color: Colors.white,
-// // // // //                   fontSize: 24,
-// // // // //                 ),
-// // // // //               ),
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.home),
-// // // // //               title: Text('Home'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.person),
-// // // // //               title: Text('Profiles'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.shopping_cart),
-// // // // //               title: Text('My Orders'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.location_on),
-// // // // //               title: Text('Track Your Orders'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.help_rounded),
-// // // // //               title: Text('Help Center'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.rate_review),
-// // // // //               title: Text('My Reviews'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             ListTile(
-// // // // //               leading: Icon(Icons.settings),
-// // // // //               title: Text('Setting'),
-// // // // //               onTap: () {},
-// // // // //             ),
-// // // // //             Spacer(),
-// // // // //             ElevatedButton(
-// // // // //               onPressed: () {},
-// // // // //               child: Text("Log Out"),
-// // // // //             ),
-// // // // //           ],
-// // // // //         ),
-// // // // //       ),
-// // // // //     );
-// // // // //   }
-// // // // // }
-
-// // // // import 'package:flutter/material.dart';
-
-// // // // class HomeScreen extends StatefulWidget {
-// // // //   const HomeScreen({Key? key}) : super(key: key);
-
-// // // //   @override
-// // // //   State<HomeScreen> createState() => _HomeScreenState();
-// // // // }
-
-// // // // class _HomeScreenState extends State<HomeScreen> {
-// // // //   int _selectedIndex = 0; // Index of the selected tab
-
-// // // //   // List of screens to be displayed on each tab
-// // // //   final List<Widget> _screens = [
-// // // //     // Add your screens here
-// // // //     Placeholder(), // Placeholder for demonstration, replace with your actual screens
-// // // //     Placeholder(),
-// // // //     Placeholder(),
-// // // //   ];
-
-// // // //   // Function to handle tab selection
-// // // //   void _onItemTapped(int index) {
-// // // //     setState(() {
-// // // //       _selectedIndex = index;
-// // // //     });
-// // // //   }
-
-// // // //   @override
-// // // //   Widget build(BuildContext context) {
-// // // //     return Scaffold(
-// // // //       appBar: AppBar(
-// // // //         backgroundColor: Colors.blue,
-// // // //         centerTitle: true,
-// // // //         title: Text("Yam Baba"),
-// // // //       ),
-// // // //       drawer: Drawer(
-// // // //         child: ListView(
-// // // //           padding: EdgeInsets.zero,
-// // // //           children: <Widget>[
-// // // //             DrawerHeader(
-// // // //               decoration: BoxDecoration(
-// // // //                 color: Colors.blue,
-// // // //               ),
-// // // //               child: Text(
-// // // //                 'Welcome User',
-// // // //                 style: TextStyle(
-// // // //                   color: Colors.white,
-// // // //                   fontSize: 24,
-// // // //                 ),
-// // // //               ),
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.home),
-// // // //               title: Text('Home'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.person),
-// // // //               title: Text('Profiles'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.shopping_cart),
-// // // //               title: Text('My Orders'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.location_on),
-// // // //               title: Text('Track Your Orders'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.help_rounded),
-// // // //               title: Text('Help Center'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.rate_review),
-// // // //               title: Text('My Reviews'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             ListTile(
-// // // //               leading: Icon(Icons.settings),
-// // // //               title: Text('Setting'),
-// // // //               onTap: () {},
-// // // //             ),
-// // // //             Spacer(),
-// // // //             ElevatedButton(
-// // // //               onPressed: () {},
-// // // //               child: Text("Log Out"),
-// // // //             ),
-// // // //           ],
-// // // //         ),
-// // // //       ),
-// // // //       body: Stack(
-// // // //         children: [
-// // // //           // Displaying the selected screen based on the current index
-// // // //           _screens[_selectedIndex],
-// // // //           // Positioned the BottomNavigationBar at the bottom of the screen
-// // // //           Positioned(
-// // // //             bottom: 0,
-// // // //             left: 0,
-// // // //             right: 0,
-// // // //             child: BottomNavigationBar(
-// // // //               currentIndex: _selectedIndex,
-// // // //               onTap: _onItemTapped,
-// // // //               items: const <BottomNavigationBarItem>[
-// // // //                 BottomNavigationBarItem(
-// // // //                   icon: Icon(Icons.home),
-// // // //                   label: 'Home',
-// // // //                 ),
-// // // //                 BottomNavigationBarItem(
-// // // //                   icon: Icon(Icons.notifications),
-// // // //                   label: 'Notifications',
-// // // //                 ),
-// // // //                 BottomNavigationBarItem(
-// // // //                   icon: Icon(Icons.person),
-// // // //                   label: 'Profile',
-// // // //                 ),
-// // // //               ],
-// // // //             ),
-// // // //           ),
-// // // //         ],
-// // // //       ),
-// // // //     );
-// // // //   }
-// // // // }
-
-// // // // Import necessary packages if not already imported
-// // // import 'package:flutter/material.dart';
-// // // // import 'package:yam_baba_e_commerce/view/homeScreen/widget/NavigationBar/customNavBar.dart';
-// // // import 'package:yam_baba_e_commerce/view/homeScreen/widget/AppDrawer/appDrawer.dart';
-
-// // // import '../CartScreen/cartScreen.dart';
-// // // import '../CateogoriesScreen/categoriesScreen.dart';
-// // // // import '../ProfileScreen/profileScreen.dart';
-
-// // // class HomeScreen extends StatefulWidget {
-// // //   const HomeScreen({Key? key}) : super(key: key);
-
-// // //   @override
-// // //   State<HomeScreen> createState() => _HomeScreenState();
-// // // }
-
-// // // class _HomeScreenState extends State<HomeScreen> {
-// // //   int _selectedIndex = 0; // Index of the selected tab
-
-// // //   // List of screens to be displayed on each tab
-// // //   final List<Widget> _screens = [
-// // //     // Featured products screen
-// // //     FeaturedProductsScreen(),
-// // //     // Categories screen
-// // //     CategoriesScreen(),
-// // //     // Promotions screen
-// // //     CartScreen(),
-// // //     // ProfileScreen()
-// // //   ];
-
-// // //   // Function to handle tab selection
-// // //   void _onItemTapped(int index) {
-// // //     setState(() {
-// // //       _selectedIndex = index;
-// // //     });
-// // //   }
-
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Scaffold(
-// // //       appBar: AppBar(
-// // //         backgroundColor: Colors.blue,
-// // //         centerTitle: true,
-// // //         title: Text("Yam Baba"),
-// // //       ),
-// // //       drawer: AppDrawer(),
-// // //       body: Stack(
-// // //         children: [
-// // //           // Displaying the selected screen based on the current index
-
-// // //           // Positioned the BottomNavigationBar at the bottom of the screen
-// // //           Positioned(
-// // //             bottom: 0,
-// // //             left: 0,
-// // //             right: 0,
-// // //             child: CustomNavBar(
-// // //                 currentIndex: _selectedIndex, onTap: _onItemTapped),
-// // //             // child: BottomNavigationBar(
-// // //             //   currentIndex: _selectedIndex,
-// // //             //   onTap: _onItemTapped,
-// // //             //   items: const <BottomNavigationBarItem>[
-// // //             //     BottomNavigationBarItem(
-// // //             //       icon: Icon(Icons.home),
-// // //             //       label: 'Home',
-// // //             //     ),
-// // //             //     BottomNavigationBarItem(
-// // //             //       icon: Icon(Icons.category_rounded),
-// // //             //       label: 'Categories',
-// // //             //     ),
-// // //             //     BottomNavigationBarItem(
-// // //             //       icon: Icon(Icons.shopping_cart),
-// // //             //       label: 'Cart',
-// // //             //     ),
-// // //             //     BottomNavigationBarItem(
-// // //             //       icon: Icon(Icons.account_box),
-// // //             //       label: 'Profile',
-// // //             //     ),
-// // //             //   ],
-// // //             // ),
-// // //           ),
-// // //           _screens[_selectedIndex],
-// // //         ],
-// // //       ),
-// // //     );
-// // //   }
-// // // }
-
-// // // // Placeholder widget for Featured Products screen
-// // // class FeaturedProductsScreen extends StatelessWidget {
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Center(
-// // //       child: Text("Featured Products Screen"),
-// // //     );
-// // //   }
-// // // }
-
-// // // import 'package:flutter/material.dart';
-// // // import 'package:flutter/widgets.dart';
-// // // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-// // // import 'widget/AppDrawer/appDrawer.dart';
-
-// // // class HomeScreen extends StatefulWidget {
-// // //   const HomeScreen({super.key});
-
-// // //   @override
-// // //   State<HomeScreen> createState() => _HomeScreenState();
-// // // }
-
-// // // class _HomeScreenState extends State<HomeScreen> {
-// // //   @override
-// // //   Widget build(BuildContext context) {
-// // //     return Scaffold(
-// // //         appBar: AppBar(
-// // //           backgroundColor: Colors.transparent,
-// // //           // title: Text("YamBaba"),
-// // //           // actions: [
-// // //           //   Image.asset(
-// // //           //     "assets/images/YambabaLogo.png",
-// // //           //     fit: BoxFit.cover,
-// // //           //   )
-// // //           // ]
-// // //           flexibleSpace: Container(
-// // //             margin: EdgeInsets.only(top: 50, left: 20),
-// // //             height: 43,
-// // //             width: 50,
-// // //             child: Center(
-// // //               child: Image.asset("assets/images/YambabaLogo.png",
-// // //                   fit: BoxFit.cover),
-// // //             ),
-// // //           ),
-// // //         ),
-// // //         drawer: AppDrawer(),
-// // //         body: SingleChildScrollView(
-// // //           child: Column(children: [
-// // //             Container(
-// // //               margin: EdgeInsets.only(top: 10, left: 20, right: 15),
-// // //               padding: EdgeInsets.all(4),
-// // //               decoration: BoxDecoration(
-// // //                 color: Colors.white,
-// // //                 borderRadius: BorderRadius.circular(36),
-// // //                 boxShadow: [
-// // //                   BoxShadow(
-// // //                     color: Colors.grey.withOpacity(0.5),
-// // //                     spreadRadius: 3,
-// // //                     blurRadius: 10,
-// // //                     offset: Offset(0, 3), // changes position of shadow
-// // //                   ),
-// // //                 ],
-// // //               ),
-// // //               child: Row(
-// // //                 children: [
-// // //                   Expanded(
-// // //                     child: Padding(
-// // //                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-// // //                       child: TextField(
-// // //                         style: TextStyle(fontSize: 17),
-// // //                         decoration: InputDecoration(
-// // //                           hintText: 'Search',
-// // //                           border: InputBorder.none,
-// // //                         ),
-// // //                       ),
-// // //                     ),
-// // //                   ),
-// // //                   IconButton(
-// // //                     icon: Icon(Icons.search),
-// // //                     onPressed: () {
-// // //                       // Perform search action
-// // //                     },
-// // //                   ),
-// // //                   IconButton(
-// // //                     icon: Icon(Icons.mic),
-// // //                     onPressed: () {
-// // //                       // Perform voice search action
-// // //                     },
-// // //                   ),
-// // //                   IconButton(
-// // //                       onPressed: () {}, icon: FaIcon(FontAwesomeIcons.sliders))
-// // //                 ],
-// // //               ),
-// // //             ),
-// // //             SizedBox(
-// // //               height: 20,
-// // //             ),
-// // //             Container(
-// // //               height: 180,
-// // //               width: 360,
-// // //               color: Colors.grey,
-// // //             ),
-// // //             Container(
-// // //               height: 100,
-// // //               color: Colors.yellow,
-// // //               width: 100,
-// // //             )
-// // //           ]),
-// // //         ));
-// // //   }
-// // // }
-
-// // import 'package:flutter/material.dart';
-// // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// // import 'widget/AppDrawer/appDrawer.dart';
-// // import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
-// // import 'widget/carouselSlider/carouselSlider.dart';
-
-// // class HomeScreen extends StatefulWidget {
-// //   const HomeScreen({Key? key}) : super(key: key);
-
-// //   @override
-// //   State<HomeScreen> createState() => _HomeScreenState();
-// // }
-
-// // class _HomeScreenState extends State<HomeScreen> {
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     final screenWidth = MediaQuery.of(context).size.width;
-// //     final screenHeight = MediaQuery.of(context).size.height;
-
-// //     return Scaffold(
-// //         appBar: AppBar(
-// //           backgroundColor: Colors.transparent,
-// //           flexibleSpace: Container(
-// //             margin: EdgeInsets.only(
-// //                 top: screenHeight * 0.06, left: screenWidth * 0.056),
-// //             height: screenHeight * 0.048,
-// //             width: screenWidth * 0.2,
-// //             child: Center(
-// //               child: Image.asset(
-// //                 "assets/images/YambabaLogo.png",
-// //                 fit: BoxFit.cover,
-// //               ),
-// //             ),
-// //           ),
-// //         ),
-// //         drawer: AppDrawer(),
-// //         body: SingleChildScrollView(
-// //             child: Column(children: [
-// //           SizedBox(
-// //             height: screenHeight * 0.009,
-// //           ),
-// //           Container(
-// //             margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
-// //             padding: EdgeInsets.all(screenWidth * 0.009),
-// //             decoration: BoxDecoration(
-// //               color: Colors.white,
-// //               borderRadius: BorderRadius.circular(screenWidth * 0.1),
-// //               boxShadow: [
-// //                 BoxShadow(
-// //                   color: Colors.grey.withOpacity(0.5),
-// //                   spreadRadius: screenWidth * 0.0000001,
-// //                   blurRadius: screenWidth * 0.01,
-// //                   // offset: Offset(0, screenWidth * 0.03),
-// //                 ),
-// //               ],
-// //             ),
-// //             child: Row(
-// //               children: [
-// //                 Expanded(
-// //                   child: Padding(
-// //                     padding:
-// //                         EdgeInsets.symmetric(horizontal: screenWidth * 0.023),
-// //                     child: TextField(
-// //                       style: TextStyle(fontSize: screenWidth * 0.042),
-// //                       decoration: InputDecoration(
-// //                         hintText: 'Search',
-// //                         border: InputBorder.none,
-// //                       ),
-// //                     ),
-// //                   ),
-// //                 ),
-// //                 IconButton(
-// //                   icon: Icon(Icons.search),
-// //                   onPressed: () {
-// //                     // Perform search action
-// //                   },
-// //                 ),
-// //                 IconButton(
-// //                   icon: Icon(Icons.mic),
-// //                   onPressed: () {
-// //                     // Perform voice search action
-// //                   },
-// //                 ),
-// //                 IconButton(
-// //                   onPressed: () {},
-// //                   icon: FaIcon(FontAwesomeIcons.sliders),
-// //                 ),
-// //               ],
-// //             ),
-// //           ),
-// //           SizedBox(
-// //             height: screenHeight * 0.02,
-// //           ),
-// //           CarousleSlider(),
-// //           SizedBox(
-// //             height: screenHeight * 0.009,
-// //           ),
-// //           Padding(
-// //             padding: const EdgeInsets.only(left: 20, right: 15),
-// //             child: Row(
-// //               children: [
-// //                 Text(
-// //                   "Categories",
-// //                   style: TextStyle(fontSize: screenHeight * 0.03),
-// //                 ),
-// //                 Spacer(),
-// //                 TextButton(
-// //                     onPressed: () {},
-// //                     child: Text("See All",
-// //                         style: TextStyle(fontSize: screenHeight * 0.0175))),
-// //               ],
-// //             ),
-// //           ),
-// //           horizontalCateogorySlider(),
-// //           Padding(
-// //             padding: const EdgeInsets.only(left: 20, right: 15),
-// //             child: Row(
-// //               children: [
-// //                 Text(
-// //                   "Mega Deals",
-// //                   style: TextStyle(fontSize: screenHeight * 0.03),
-// //                 ),
-// //                 Spacer(),
-// //                 TextButton(
-// //                     onPressed: () {},
-// //                     child: Text("See All",
-// //                         style: TextStyle(fontSize: screenHeight * 0.0175))),
-// //               ],
-// //             ),
-// //           ),
-// //           SizedBox(
-// //             height: 15,
-// //           ),
-
-// //           GridView.builder(
-// //             padding: EdgeInsets.all(8.0),
-// //             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-// //               crossAxisCount: 2,
-// //               childAspectRatio: 1.0,
-// //               crossAxisSpacing: 0.0,
-// //               mainAxisSpacing: 5,
-// //               mainAxisExtent: 264,
-// //             ),
-
-// //             itemCount: 4,
-// //             itemBuilder: (BuildContext context, int index) {
-// //               return Container(
-// //                 color: Colors.black,
-// //               );
-// //             },
-// //             scrollDirection: Axis.horizontal, // Enable horizontal scrolling
-// //           ),
-// //           // ProductCard(),
-// //         ])));
-// //   }
-// // }
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/MegaDeals/megaDeals.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/ProductCard/productCard.dart';
-// import 'package:yam_baba_e_commerce/view/homeScreen/widget/ProductCard/productCard.dart';
-
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/AppDrawer/appDrawer.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/HorizontalSlider/horizontalCateogorySlider.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/carouselSlider/carouselSlider.dart';
 import '../../resources/components/navigationBar.dart';
-import 'widget/AppDrawer/appDrawer.dart';
-import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
-// import 'widget/ProductCard/productCard.dart';
-import 'widget/carouselSlider/carouselSlider.dart';
 
-// Define a Product class to represent product data
 class Product {
   final String name;
   final String imageUrl;
@@ -593,6 +20,66 @@ class Product {
   });
 }
 
+class ProductCardWidget extends StatelessWidget {
+  final Product product;
+
+  const ProductCardWidget({Key? key, required this.product}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+      width: 150.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius:
+            BorderRadius.all(Radius.circular(10.0)), // Round all four sides
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipRRect(
+              borderRadius:
+                  BorderRadius.circular(10.0), // Round the image corners
+              child: Image.asset(
+                product.imageUrl,
+                width: double.infinity,
+                height: 100.0,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              product.name,
+              style:
+                  const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              '\$${product.price.toStringAsFixed(2)}',
+              style: const TextStyle(fontSize: 14.0),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -604,30 +91,29 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Product> products = [
     Product(
       name: 'Product 1',
-      imageUrl: 'assets/images/logo.png',
+      imageUrl: 'assets/images/product3.jpg',
       price: 19.99,
-      description: 'This is the description for product 2',
+      description: 'This is the description for product 1',
     ),
     Product(
       name: 'Product 2',
-      imageUrl: 'assets/images/logo.png',
+      imageUrl: 'assets/images/product2.jpg',
       price: 29.99,
       description: 'This is the description for product 2',
     ),
     Product(
       name: 'Product 3',
-      imageUrl: 'assets/images/logo.png',
+      imageUrl: 'assets/images/product1.jpg',
       price: 24.99,
-      description: 'This is the description for product 2',
+      description: 'This is the description for product 3',
     ),
     Product(
       name: 'Product 4',
-      imageUrl: 'assets/images/logo.png',
+      imageUrl: 'assets/images/product4.jpg',
       price: 14.99,
-      description: 'This is the description for product 2',
+      description: 'This is the description for product 4',
     ),
   ];
-  // Sample product data
 
   @override
   Widget build(BuildContext context) {
@@ -680,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           EdgeInsets.symmetric(horizontal: screenWidth * 0.023),
                       child: TextField(
                         style: TextStyle(fontSize: screenWidth * 0.042),
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Search',
                           border: InputBorder.none,
                         ),
@@ -688,26 +174,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     onPressed: () {
                       // Perform search action
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.mic),
+                    icon: const Icon(Icons.mic),
                     onPressed: () {
                       // Perform voice search action
                     },
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.sliders),
+                    icon: const FaIcon(FontAwesomeIcons.sliders),
                   ),
                 ],
               ),
             ),
             SizedBox(height: screenHeight * 0.02),
-            CarousleSlider(),
+            const CarousleSlider(),
             SizedBox(height: screenHeight * 0.009),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -720,8 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      final controller = Get.find<
-                          NavigationController>(); // Find the NavigationController
+                      final controller = Get.find<NavigationController>();
                       controller.selectedIndex.value = 1;
                     },
                     child: Text(
@@ -732,54 +217,42 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            horizontalCateogorySlider(),
+            const horizontalCateogorySlider(),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 15),
-              child: Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Mega Deals",
-                    style: TextStyle(fontSize: screenHeight * 0.03),
+                  Row(
+                    children: [
+                      Text(
+                        "Mega Deals",
+                        style: TextStyle(fontSize: screenHeight * 0.03),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "See All",
+                          style: TextStyle(fontSize: screenHeight * 0.0175),
+                        ),
+                      ),
+                    ],
                   ),
-                  Spacer(),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text("See All",
-                          style: TextStyle(fontSize: screenHeight * 0.0175))),
-                ],
-              ),
-            ),
-            MegaDeals(),
-            Padding(
-              padding: const EdgeInsets.only(left: 23, right: 15),
-              child: Row(
-                children: [
-                  Text(
-                    "Recommended",
-                    style: TextStyle(fontSize: screenHeight * 0.03),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 200,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        return ProductCardWidget(
+                          product: products[index],
+                        );
+                      },
+                    ),
                   ),
-                  Spacer(),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text("See All",
-                          style: TextStyle(fontSize: screenHeight * 0.0175))),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: GridView.builder(
-                // scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.75, // Adjust aspect ratio as needed
-                ),
-                itemCount: products.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return buildProductCard(products[index]);
-                },
               ),
             ),
           ],
