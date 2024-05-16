@@ -20,6 +20,8 @@ class Product {
   });
 }
 
+//  Card Design not following Figma ------------------------
+
 class ProductCardWidget extends StatelessWidget {
   final Product product;
 
