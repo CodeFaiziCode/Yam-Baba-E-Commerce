@@ -28,7 +28,7 @@ class ProductCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10.0),
+      margin: const EdgeInsets.symmetric(horizontal: 5.0),
       width: 150.0,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -73,6 +73,7 @@ class ProductCardWidget extends StatelessWidget {
               style: const TextStyle(fontSize: 14.0),
             ),
           ),
+          const SizedBox(height: 10),
         ],
       ),
     );
@@ -239,14 +240,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Container(
+                  SizedBox(
                     height: 200,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: products.length,
                       itemBuilder: (context, index) {
-                        return ProductCardWidget(
-                          product: products[index],
+                        return Column(
+                          children: [
+                            ProductCardWidget(
+                              product: products[index],
+                            ),
+                            const SizedBox(
+                                height: 10), // Space at the bottom of each card
+                          ],
                         );
                       },
                     ),
@@ -279,14 +286,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Container(
+                  SizedBox(
                     height: 200,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: products.length,
                       itemBuilder: (context, index) {
-                        return ProductCardWidget(
-                          product: products[index],
+                        return Column(
+                          children: [
+                            ProductCardWidget(
+                              product: products[index],
+                            ),
+                            const SizedBox(
+                                height: 10), // Space at the bottom of each card
+                          ],
                         );
                       },
                     ),
