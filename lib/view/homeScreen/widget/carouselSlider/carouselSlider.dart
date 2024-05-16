@@ -62,7 +62,7 @@ class CarousleSlider extends StatelessWidget {
         child: CarouselSlider(items: const [
           HomeSlider(
             isNetworkImage: false,
-            imageUrl: "assets/images/ban1.jpeg",
+            imageUrl: "assets/images/ban3.jpeg",
           ),
           HomeSlider(
             isNetworkImage: false,
