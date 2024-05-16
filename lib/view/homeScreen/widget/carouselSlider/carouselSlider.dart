@@ -62,19 +62,11 @@ class CarousleSlider extends StatelessWidget {
         child: CarouselSlider(items: const [
           HomeSlider(
             isNetworkImage: false,
-            imageUrl: "assets/images/YambabaLogo.png",
+            imageUrl: "assets/images/ban1.jpeg",
           ),
           HomeSlider(
             isNetworkImage: false,
-            imageUrl: "assets/images/logo.png",
-          ),
-          HomeSlider(
-            isNetworkImage: false,
-            imageUrl: "assets/images/YambabaLogo.png",
-          ),
-          HomeSlider(
-            isNetworkImage: false,
-            imageUrl: "assets/images/logo.png",
+            imageUrl: "assets/images/ban2.jpeg",
           ),
         ], options: CarouselOptions(viewportFraction: 1)),
       ),
