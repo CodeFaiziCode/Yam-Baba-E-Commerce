@@ -226,7 +226,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Text(
                       "See All",
-                      style: TextStyle(fontSize: screenHeight * 0.0175),
+                      style: TextStyle(
+                          fontSize: screenHeight * 0.0175,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
                     ),
                   ),
                 ],
@@ -250,7 +253,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {},
                         child: Text(
                           "See All",
-                          style: TextStyle(fontSize: screenHeight * 0.0175),
+                          style: TextStyle(
+                              fontSize: screenHeight * 0.0175,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
                         ),
                       ),
                     ],
@@ -296,7 +302,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {},
                         child: Text(
                           "See All",
-                          style: TextStyle(fontSize: screenHeight * 0.0175),
+                          style: TextStyle(
+                              fontSize: screenHeight * 0.0175,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
                         ),
                       ),
                     ],
