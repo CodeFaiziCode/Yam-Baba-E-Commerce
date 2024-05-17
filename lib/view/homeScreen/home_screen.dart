@@ -82,6 +82,10 @@ class ProductCardWidget extends StatelessWidget {
                 const Icon(
                   Icons.favorite_outline,
                 ),
+                const SizedBox(
+                  width: 8,
+                ),
+                const Icon(Icons.add_shopping_cart_outlined)
               ],
             ),
           ),
