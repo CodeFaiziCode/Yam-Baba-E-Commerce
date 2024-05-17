@@ -342,6 +342,7 @@ class CategoriesScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
         child: Column(
           children: [
+            // SearchBar Added
             Container(
               margin: EdgeInsets.symmetric(vertical: screenWidth * 0.009),
               padding: EdgeInsets.all(screenWidth * 0.009),
