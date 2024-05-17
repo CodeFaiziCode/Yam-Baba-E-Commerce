@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/AppDrawer/appDrawer.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/HorizontalSlider/horizontalCateogorySlider.dart';
-import 'package:yam_baba_e_commerce/view/homeScreen/widget/carouselSlider/carouselSlider.dart';
-import '../../resources/components/navigationBar.dart';
 
+// Importing specific components
+import '../../resources/components/navigationBar.dart';
+import 'widget/AppDrawer/appDrawer.dart';
+import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
+import 'widget/carouselSlider/carouselSlider.dart';
+
+// Define the Product class
 class Product {
   final String name;
   final String imageUrl;
@@ -20,8 +23,7 @@ class Product {
   });
 }
 
-//  Card Design not following Figma ------------------------
-
+// Product card widget
 class ProductCardWidget extends StatelessWidget {
   final Product product;
 
@@ -50,8 +52,7 @@ class ProductCardWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(7.5),
             child: ClipRRect(
-              borderRadius:
-                  BorderRadius.circular(10.0), // Round the image corners
+              borderRadius: BorderRadius.circular(10.0),
               child: Image.asset(
                 product.imageUrl,
                 width: double.infinity,
@@ -96,6 +97,7 @@ class ProductCardWidget extends StatelessWidget {
   }
 }
 
+// Home screen widget
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -274,7 +276,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               product: products[index],
                             ),
                             const SizedBox(
-                                height: 10), // Space at the bottom of each card
+                              height: 10,
+                            ), // Space at the bottom of each card
                           ],
                         );
                       },
@@ -284,8 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            // Recomended product
-
+            // Recommended products section
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 15),
               child: Column(
@@ -294,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     children: [
                       Text(
-                        "Recomended",
+                        "Recommended",
                         style: TextStyle(fontSize: screenHeight * 0.03),
                       ),
                       const Spacer(),
@@ -323,7 +325,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               product: products[index],
                             ),
                             const SizedBox(
-                                height: 10), // Space at the bottom of each card
+                              height: 10,
+                            ), // Space at the bottom of each card
                           ],
                         );
                       },
