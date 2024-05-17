@@ -48,7 +48,7 @@ class ProductCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(7.5),
             child: ClipRRect(
               borderRadius:
                   BorderRadius.circular(10.0), // Round the image corners
