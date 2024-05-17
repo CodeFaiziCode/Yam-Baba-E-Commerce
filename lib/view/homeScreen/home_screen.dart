@@ -232,8 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 5.0),
-            const horizontalCateogorySlider(),
+            const SizedBox(height: 15.0),
+            const HorizontalCategorySlider(),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 15),
               child: Column(
