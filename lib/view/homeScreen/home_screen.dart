@@ -70,9 +70,19 @@ class ProductCardWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(
-              '\$${product.price.toStringAsFixed(2)}',
-              style: const TextStyle(fontSize: 14.0),
+            child: Row(
+              children: [
+                Text(
+                  '\$${product.price.toStringAsFixed(2)}',
+                  style: const TextStyle(fontSize: 14.0),
+                ),
+                const SizedBox(
+                  width: 25,
+                ),
+                const Icon(
+                  Icons.favorite_outline,
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 10),
@@ -218,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 5.0),
+            const SizedBox(height: 5.0),
             const horizontalCateogorySlider(),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 15),
