@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: TextField(
                         style: TextStyle(fontSize: screenWidth * 0.042),
                         decoration: const InputDecoration(
-                          hintText: 'Search',
+                          hintText: '    Search',
                           border: InputBorder.none,
                         ),
                       ),
