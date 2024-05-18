@@ -140,16 +140,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Are you sure?'),
-            content: Text('Do you want to exit the app?'),
+            title: const Text('Are you sure?'),
+            content: const Text('Do you want to exit the app?'),
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: Text('No'),
+                child: const Text('No'),
               ),
               TextButton(
                 onPressed: () => exit(0),
-                child: Text('Yes'),
+                child: const Text('Yes'),
               ),
             ],
           ),
