@@ -251,12 +251,12 @@
 //   }
 // }
 
-//  new UI
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
+// New UI
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../functions/navbarNavigation.dart';
+import '../../resources/components/navigationBar.dart';
 
 class CategoryItem extends StatelessWidget {
   final String imageUrl;
@@ -325,128 +325,137 @@ class CategoryItem extends StatelessWidget {
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
 
+  // void navigateToIndex(int index) {
+  //   final controller =
+  //       Get.find<NavigationController>(); // Find the NavigationController
+  //   controller.selectedIndex.value = index;
+  // }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text("Categories"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            navigateToIndex(0);
-          },
+    return WillPopScope(
+      onWillPop: () async {
+        navigateToIndex(0); // Use the dynamic navigation function on back press
+        return false; // Prevent default back button behavior
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: const Text("Categories"),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              navigateToIndex(0); // Use the dynamic navigation function
+            },
+          ),
         ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
-        child: Column(
-          children: [
-            // SearchBar Added
-            Container(
-              margin: EdgeInsets.symmetric(vertical: screenWidth * 0.009),
-              padding: EdgeInsets.all(screenWidth * 0.009),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(screenWidth * 0.1),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: screenWidth * 0.023),
-                      child: TextField(
-                        style: TextStyle(fontSize: screenWidth * 0.042),
-                        decoration: const InputDecoration(
-                          hintText: '   Search',
-                          border: InputBorder.none,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: screenWidth * 0.009),
+                padding: EdgeInsets.all(screenWidth * 0.009),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(screenWidth * 0.1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.023),
+                        child: TextField(
+                          style: TextStyle(fontSize: screenWidth * 0.042),
+                          decoration: const InputDecoration(
+                            hintText: 'Search',
+                            border: InputBorder.none,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.search),
-                    onPressed: () {
-                      // Perform search action
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.mic),
-                    onPressed: () {
-                      // Perform voice search action
-                    },
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const FaIcon(FontAwesomeIcons.sliders),
-                  ),
-                ],
+                    IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed: () {
+                        // Perform search action
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.mic),
+                      onPressed: () {
+                        // Perform voice search action
+                      },
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.slideshow),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 10.0,
-            ),
-            Expanded(
-              child: GridView.count(
-                mainAxisSpacing: 20,
-                crossAxisCount: 2,
-                crossAxisSpacing: 20,
-                children: const [
-                  CategoryItem(
-                    imageUrl: "assets/images/product1.jpg",
-                    title: "Fashion",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/elec.jpeg",
-                    title: "Electronics",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/watch.jpeg",
-                    title: "Watches",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/jwe.jpeg",
-                    title: "Jewellery",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/sports.jpeg",
-                    title: "Sports",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/groc.jpeg",
-                    title: "Grocery",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/product1.jpg",
-                    title: "Fashion",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/elec.jpeg",
-                    title: "Electronics",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/sports.jpeg",
-                    title: "Sports",
-                  ),
-                  CategoryItem(
-                    imageUrl: "assets/images/groc.jpeg",
-                    title: "Grocery",
-                  ),
-                ],
+              SizedBox(height: 10),
+              Expanded(
+                child: GridView.count(
+                  mainAxisSpacing: 20,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 20,
+                  children: const [
+                    CategoryItem(
+                      imageUrl: "assets/images/product1.jpg",
+                      title: "Fashion",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/elec.jpeg",
+                      title: "Electronics",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/watch.jpeg",
+                      title: "Watches",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/jwe.jpeg",
+                      title: "Jewellery",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/sports.jpeg",
+                      title: "Sports",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/groc.jpeg",
+                      title: "Grocery",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/product1.jpg",
+                      title: "Fashion",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/elec.jpeg",
+                      title: "Electronics",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/sports.jpeg",
+                      title: "Sports",
+                    ),
+                    CategoryItem(
+                      imageUrl: "assets/images/groc.jpeg",
+                      title: "Grocery",
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
