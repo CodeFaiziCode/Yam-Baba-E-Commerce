@@ -256,6 +256,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../../resources/components/navigationBar.dart';
+
 class CategoryItem extends StatelessWidget {
   final String imageUrl;
   final String title;
@@ -334,7 +336,9 @@ class CategoriesScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Get.back(); // Navigate back using GetX
+            final controller = Get.find<
+                NavigationController>(); // Find the NavigationController
+            controller.selectedIndex.value = 0;
           },
         ),
       ),
