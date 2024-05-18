@@ -97,6 +97,8 @@ import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScre
 import '../../resources/colors/colors.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({super.key});
+
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
 }
