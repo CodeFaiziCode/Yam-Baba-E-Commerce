@@ -560,16 +560,10 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
   int _currentPageIndex = 0;
 
   final List<Map<String, dynamic>> _pages = [
-    {
-      'imagePath': 'assets/images/YambabaLogo.png',
-      'text': 'Market for everything'
-    },
-    {'imagePath': 'assets/images/YambabaLogo.png', 'text': 'Easy Checkout'},
-    {
-      'imagePath': 'assets/images/YambabaLogo.png',
-      'text': 'Online Settlements'
-    },
-    {'imagePath': 'assets/images/YambabaLogo.png', 'text': 'Fast Delivery'},
+    {'imagePath': 'assets/images/onb2.png', 'text': 'Easy Checkout'},
+    {'imagePath': 'assets/images/onb4.png', 'text': 'Market for everything'},
+    {'imagePath': 'assets/images/onb1.png', 'text': 'Online Settlements'},
+    {'imagePath': 'assets/images/onb1.png', 'text': 'Online Settlements'},
   ];
 
   @override
@@ -592,13 +586,16 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   });
                 },
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: screenWidth,
-                    height: screenHeight * 0.6,
-                    child: Center(
-                      child: Image.asset(
-                        _pages[index]['imagePath'],
-                        fit: BoxFit.cover,
+                  return Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      width: screenWidth,
+                      height: screenHeight * 0.6,
+                      child: Center(
+                        child: Image.asset(
+                          _pages[index]['imagePath'],
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   );
@@ -612,7 +609,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                 children: [
                   Text(
                     _pages[_currentPageIndex]['text'],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -631,9 +628,9 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                     width: screenWidth * 0.8,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.toNamed('WelcomeScreen');
+                        Get.toNamed("WelcomeScreen");
                       },
-                      child: Text(
+                      child: const Text(
                         "Get Started",
                         style: TextStyle(
                           fontSize: 22,
@@ -649,14 +646,14 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Padding(
                     padding: EdgeInsets.only(bottom: screenHeight * 0.013),
                     child: InkWell(
                       onTap: () {
                         Get.toNamed('LoginScreen');
                       },
-                      child: Text(
+                      child: const Text(
                         'Already have an account? Log In here',
                         style: TextStyle(fontSize: 18),
                       ),

@@ -54,22 +54,27 @@ class CarousleSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    return Padding(
-      padding: const EdgeInsets.only(left: 13, right: 13),
-      child: Container(
-        height: screenHeight * 0.22,
-        width: screenWidth * 1,
-        child: CarouselSlider(items: const [
-          HomeSlider(
-            isNetworkImage: false,
-            imageUrl: "assets/images/ban3.jpeg",
-          ),
-          HomeSlider(
-            isNetworkImage: false,
-            imageUrl: "assets/images/ban2.jpeg",
-          ),
-        ], options: CarouselOptions(viewportFraction: 1)),
-      ),
+    return Container(
+      height: screenHeight * 0.22,
+      width: screenWidth * 1,
+      child: CarouselSlider(items: const [
+        HomeSlider(
+          isNetworkImage: false,
+          imageUrl: "assets/images/ban1.jpeg",
+        ),
+        HomeSlider(
+          isNetworkImage: false,
+          imageUrl: "assets/images/ban6.jpg",
+        ),
+        HomeSlider(
+          isNetworkImage: false,
+          imageUrl: "assets/images/ban3.jpeg",
+        ),
+        HomeSlider(
+          isNetworkImage: false,
+          imageUrl: "assets/images/ban5.jpg",
+        ),
+      ], options: CarouselOptions(viewportFraction: 1)),
     );
   }
 }
