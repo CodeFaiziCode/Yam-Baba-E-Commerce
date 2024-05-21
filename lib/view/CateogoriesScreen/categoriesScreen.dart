@@ -141,7 +141,6 @@ class CategoriesScreen extends StatelessWidget {
         ),
         drawer: AppDrawer(),
         body: Padding(
-          // padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
           padding: EdgeInsetsDirectional.only(top: 10, start: 10, end: 10),
           child: Column(
             children: [
@@ -151,6 +150,8 @@ class CategoriesScreen extends StatelessWidget {
                   mainAxisSpacing: 20,
                   crossAxisCount: 2,
                   crossAxisSpacing: 20,
+                  padding:
+                      const EdgeInsets.only(bottom: 20), // Added bottom padding
                   children: const [
                     CategoryItem(
                       imageUrl: "assets/images/product1.jpg",
