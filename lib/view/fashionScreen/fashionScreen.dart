@@ -9,39 +9,45 @@ class FashionCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 5.0),
+      width: screenWidth * 0.4,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: Color.fromRGBO(238, 250, 255, 1),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            padding: EdgeInsets.all(10.0),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
             child: Image.asset(
-              imageUrl, // Your image asset path
-              height: screenHeight * 0.125, // Adjust the image height
-              width: screenWidth * 0.25, // Adjust the image width
+              imageUrl,
+              height: screenWidth * 0.3, // Adjusted height to fit properly
+              width: double.infinity,
               fit: BoxFit.cover,
             ),
           ),
-          // SizedBox(height: 10.0), // Add space between image and text
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontSize: 17.0, // Increase text font size
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-                overflow:
-                    TextOverflow.ellipsis, // Show ellipsis if text overflows
-                maxLines: 2, // Limit text to 2 lines
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
             ),
           ),
         ],
@@ -62,9 +68,18 @@ class _FashionScreenState extends State<FashionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        // centerTitle: true,
-        title: Text("Fashion"),
+        backgroundColor: Colors.blue,
+        title: const Text(
+          "Fashion",
+          style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(
+          color: Colors.white,
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(right: 25, left: 25, top: 10),
@@ -72,21 +87,28 @@ class _FashionScreenState extends State<FashionScreen> {
           mainAxisSpacing: 20,
           crossAxisCount: 2,
           crossAxisSpacing: 20,
-          children: [
-            GestureDetector(
-                child: FashionCategoryItem(
-                    imageUrl: "assets/images/logo.png",
-                    title: "Men's Fashion")),
+          padding: const EdgeInsets.only(bottom: 20), // Added bottom padding
+          children: const [
             FashionCategoryItem(
-                imageUrl: "assets/images/logo.png", title: "Women's Fashion"),
+                imageUrl: "assets/images/watch.jpeg", title: "Watches"),
             FashionCategoryItem(
-                imageUrl: "assets/images/logo.png", title: "Kid's Fashion"),
+                imageUrl: "assets/images/jwe.jpeg", title: "Jewellery"),
             FashionCategoryItem(
-                imageUrl: "assets/images/logo.png", title: "Shoes"),
+                imageUrl: "assets/images/bands.jpeg", title: "Bands"),
             FashionCategoryItem(
-                imageUrl: "assets/images/logo.png", title: "Bags & Luggages"),
-            FashionCategoryItem(imageUrl: "assets/images/logo.png", title: ""),
-            FashionCategoryItem(imageUrl: "assets/images/logo.png", title: ""),
+                imageUrl: "assets/images/product1.jpg", title: "Listick"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/caps.jpeg", title: "Cap"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/rings.jpeg", title: "Rings"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/product1.jpg", title: "Makeup"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/cloths.jpeg", title: "Cloths"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/sports.jpeg", title: "Sports"),
+            FashionCategoryItem(
+                imageUrl: "assets/images/groc.jpeg", title: "Grocery"),
           ],
         ),
       ),
