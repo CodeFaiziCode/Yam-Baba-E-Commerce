@@ -1,8 +1,7 @@
-// New UI
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../functions/navbarNavigation.dart';
+import '../homeScreen/widget/AppDrawer/appDrawer.dart';
 
 class CategoryItem extends StatelessWidget {
   final String imageUrl;
@@ -73,7 +72,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return WillPopScope(
       onWillPop: () async {
@@ -82,69 +81,70 @@ class CategoriesScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: const Text("Categories"),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              navigateToIndex(0); // Use the dynamic navigation function
-            },
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.blue,
+          flexibleSpace: Container(
+            height: screenHeight * 0.163,
+            // width: screenWidth * 1.2,
+            child: Center(
+              child: Image.asset(
+                "assets/images/newLogo.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.notifications_active,
+                size: 30,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.account_balance_wallet_outlined,
+                size: 30,
+              ),
+              onPressed: () {},
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+          ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(70.0),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 10.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.search,
+                      ),
+                      prefixIconColor: Colors.black54,
+                      hintText: 'Search...',
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (query) {},
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
+        drawer: AppDrawer(),
         body: Padding(
           // padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.042),
           padding: EdgeInsetsDirectional.only(top: 10, start: 10, end: 10),
           child: Column(
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(vertical: screenWidth * 0.009),
-                padding: EdgeInsets.all(screenWidth * 0.009),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(screenWidth * 0.1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.023),
-                        child: TextField(
-                          style: TextStyle(fontSize: screenWidth * 0.042),
-                          decoration: const InputDecoration(
-                            hintText: 'Search',
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {
-                        // Perform search action
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.mic),
-                      onPressed: () {
-                        // Perform voice search action
-                      },
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.slideshow),
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(height: 10),
               Expanded(
                 child: GridView.count(
