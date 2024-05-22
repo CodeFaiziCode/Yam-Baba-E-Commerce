@@ -6,6 +6,7 @@ class BlackButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final double borderRadius;
+  final double elevation;
   final double fontSize;
   final FontWeight fontWeight;
   final EdgeInsets padding;
@@ -13,11 +14,12 @@ class BlackButton extends StatelessWidget {
   const BlackButton({
     required this.onPressed,
     required this.text,
-    this.backgroundColor = Colors.black,
+    this.backgroundColor = Colors.blue,
     this.textColor = Colors.white,
     this.borderRadius = 8.0,
     this.fontSize = 18.0,
     this.fontWeight = FontWeight.normal,
+    this.elevation = 8.0,
     this.padding = const EdgeInsets.all(12.0),
     Key? key,
   }) : super(key: key);
@@ -38,6 +40,7 @@ class BlackButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
+          elevation: elevation,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
