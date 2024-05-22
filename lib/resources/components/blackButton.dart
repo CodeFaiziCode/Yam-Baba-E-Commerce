@@ -17,7 +17,7 @@ class BlackButton extends StatelessWidget {
     this.backgroundColor = Colors.blue,
     this.textColor = Colors.white,
     this.borderRadius = 8.0,
-    this.fontSize = 18.0,
+    this.fontSize = 20.0,
     this.fontWeight = FontWeight.normal,
     this.elevation = 8.0,
     this.padding = const EdgeInsets.all(12.0),
@@ -29,7 +29,7 @@ class BlackButton extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     final buttonWidth =
-        screenWidth * 0.75; // Button width is 80% of screen width
+        screenWidth * 0.92; // Button width is 80% of screen width
     final buttonHeight =
         screenHeight * 0.06; // Button height is 7% of screen height
 

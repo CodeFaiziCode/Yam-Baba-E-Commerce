@@ -23,7 +23,7 @@ class WhiteButton extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     final buttonWidth =
-        screenWidth * 0.75; // Button width is 80% of screen width
+        screenWidth * 0.92; // Button width is 80% of screen width
     final buttonHeight =
         screenHeight * 0.06; // Default width is 80% of the screen width
 

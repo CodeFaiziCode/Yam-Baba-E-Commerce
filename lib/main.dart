@@ -33,23 +33,26 @@ class MyApp extends StatelessWidget {
 
           GetPage(
               name: '/ForgotPasswordScreen',
-              page: () => ForgotPasswordScreen()),
+              page: () => const ForgotPasswordScreen()),
           GetPage(name: '/OtpScreen', page: () => OTPScreen()),
           GetPage(
               name: '/PhoneNoRegistration',
-              page: () => MobileNumberRegistrationScreen()),
+              page: () => const MobileNumberRegistrationScreen()),
           GetPage(name: '/ResetScreen', page: () => ResetPasswordScreen()),
-          GetPage(name: '/GetStartedScreen', page: () => GetStartedScreen()),
+          GetPage(
+              name: '/GetStartedScreen', page: () => const GetStartedScreen()),
           // GetPage(name: '/SplashScreen', page: () => GetStartedScreen()),
           GetPage(name: '/WelcomeScreen', page: () => WelcomeScreen()),
-          GetPage(name: '/LoginScreen', page: () => LoginScreen()),
-          GetPage(name: '/HomeScreen', page: () => HomeScreen()),
-          GetPage(name: '/NavigationMenu', page: () => NavigationMenu()),
-          GetPage(name: '/TrackOrderScreen', page: () => TrackOrderScreen()),
+          GetPage(name: '/LoginScreen', page: () => const LoginScreen()),
+          GetPage(name: '/HomeScreen', page: () => const HomeScreen()),
+          GetPage(name: '/NavigationMenu', page: () => const NavigationMenu()),
+          GetPage(
+              name: '/TrackOrderScreen', page: () => const TrackOrderScreen()),
           GetPage(name: '/ProfileScreen', page: () => ProfileScreen()),
-          GetPage(name: '/SignupScreen', page: () => SignUpScreen()),
-          GetPage(name: '/CategoryScreen', page: () => CategoriesScreen()),
-          GetPage(name: '/FashionScreen', page: () => FashionScreen()),
+          GetPage(name: '/SignupScreen', page: () => const SignUpScreen()),
+          GetPage(
+              name: '/CategoryScreen', page: () => const CategoriesScreen()),
+          GetPage(name: '/FashionScreen', page: () => const FashionScreen()),
         ]);
   }
 }

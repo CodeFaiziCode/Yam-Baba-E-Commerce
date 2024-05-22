@@ -158,14 +158,19 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 BlackButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed("/LoginScreen");
+                  },
                   text: " Sign In",
                   backgroundColor: Colors.blue,
+                 
                 ),
                 const SizedBox(height: 20),
                 WhiteButton(
                   text: "Register",
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed("/SignupScreen");
+                  },
                   textColor: Colors.blue,
                 ),
                 const SizedBox(height: 30),
