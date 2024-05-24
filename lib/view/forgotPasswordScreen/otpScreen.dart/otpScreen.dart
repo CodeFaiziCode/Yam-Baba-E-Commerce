@@ -123,6 +123,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     TextButton(
                       onPressed: () {
                         // Implement logic to resend OTP
+                        // todo: display message of msg resent
                         print('Resend OTP');
                       },
                       child: const Text(
