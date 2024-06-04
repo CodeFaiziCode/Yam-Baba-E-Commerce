@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
 import 'package:yam_baba_e_commerce/resources/components/clipPath.dart';
+import 'package:yam_baba_e_commerce/resources/components/textField.dart';
 import '../../resources/components/blackButton.dart';
 import 'loginScreenModel.dart';
 
@@ -54,9 +55,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Center(
                       child: Text(
-                        'Welcome Back!',
+                        'Sign In',
                         style: TextStyle(
-                          fontSize: screenWidth * 0.09,
+                          fontSize: screenWidth * 0.15,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -72,47 +73,45 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: screenHeight * 0.02),
-                    TextFormField(
+                    // TextFormField(
+                    //   controller: loginSM.emailController.value,
+                    //   keyboardType: TextInputType.emailAddress,
+                    //   decoration: InputDecoration(
+                    //     filled: true,
+                    //     fillColor: AppColor.fieldColor,
+                    //     hintText: 'Email',
+                    //     border: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //     ),
+                    //   ),
+                    //   validator: (value) {
+                    //     if (value == null || value.isEmpty) {
+                    //       return 'Please enter your email';
+                    //     }
+                    //     if (!RegExp(
+                    //             r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+                    //         .hasMatch(value)) {
+                    //       return 'Please enter a valid email address';
+                    //     }
+                    //     return null;
+                    //   },
+                    // ),
+
+                    CustomTextField(
                       controller: loginSM.emailController.value,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: AppColor.fieldColor,
-                        hintText: 'Email',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        if (!RegExp(
-                                r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
-                            .hasMatch(value)) {
-                          return 'Please enter a valid email address';
-                        }
-                        return null;
-                      },
+                      hintText: "Email or Phone Number",
+                      labelText: "Email or Phone",
+                      validator:
+                          validateEmailOrPhone, // Use the appropriate validator
                     ),
+
                     SizedBox(height: screenHeight * 0.026),
-                    TextFormField(
+                    CustomTextField(
                       controller: loginSM.passwordController.value,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: AppColor.fieldColor,
-                        hintText: 'Password',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        return null;
-                      },
+                      hintText: "Password",
+                      labelText: "Password",
+                      obscureText: true, // Enable password hiding
+                      validator: validatePassword, // Use the password validator
                     ),
                     SizedBox(height: screenHeight * 0.01),
                     Align(

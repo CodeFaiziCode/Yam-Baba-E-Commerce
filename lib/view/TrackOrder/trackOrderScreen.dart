@@ -51,6 +51,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
             child: CustomTextField(
               controller: orderIdController,
               hintText: "Enter your ID",
+              labelText: 'ID',
             ),
           ),
           SizedBox(
