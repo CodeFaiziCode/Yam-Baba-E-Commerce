@@ -7,10 +7,10 @@ import 'package:yam_baba_e_commerce/view/fashionScreen/fashionScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
 import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
 import 'package:yam_baba_e_commerce/view/homeScreen/home_screen.dart';
-import 'package:yam_baba_e_commerce/view/loginScreen/login_screen.dart';
+import 'package:yam_baba_e_commerce/view/loginScreen/loginScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/otpScreen.dart/otpScreen.dart';
 import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/resetPasswordScreen/resetPasswordScreen.dart';
-import 'package:yam_baba_e_commerce/view/signupScreen/signup_screen.dart';
+import 'package:yam_baba_e_commerce/view/signupScreen/SignupScreen.dart';
 import 'package:yam_baba_e_commerce/view/welcomeScreen/welcome_screen.dart';
 
 import 'resources/components/navigationBar.dart';

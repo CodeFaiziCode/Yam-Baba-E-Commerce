@@ -25,7 +25,7 @@ class WhiteButton extends StatelessWidget {
     final buttonWidth =
         screenWidth * 0.92; // Button width is 80% of screen width
     final buttonHeight =
-        screenHeight * 0.06; // Default width is 80% of the screen width
+        screenHeight * 0.07; // Default width is 80% of the screen width
 
     return SizedBox(
       width: buttonWidth,

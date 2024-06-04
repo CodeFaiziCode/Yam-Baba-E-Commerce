@@ -31,7 +31,7 @@ class BlackButton extends StatelessWidget {
     final buttonWidth =
         screenWidth * 0.92; // Button width is 80% of screen width
     final buttonHeight =
-        screenHeight * 0.06; // Button height is 7% of screen height
+        screenHeight * 0.07; // Button height is 7% of screen height
 
     return SizedBox(
       width: buttonWidth,
