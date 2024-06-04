@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 
@@ -522,17 +523,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
-              icon: const Icon(
-                Icons.notifications_active,
-                size: 30,
-              ),
+              icon: const FaIcon(Icons.notifications_none, size: 31),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(
-                Icons.account_balance_wallet_outlined,
-                size: 30,
-              ),
+              icon: const FaIcon(Icons.shopping_cart),
               onPressed: () {},
             ),
             const SizedBox(
