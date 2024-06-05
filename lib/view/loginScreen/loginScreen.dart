@@ -102,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               // Handle sign in
+                              Get.toNamed("/HomeScreen");
                             }
                           },
                           text: "Sign In",

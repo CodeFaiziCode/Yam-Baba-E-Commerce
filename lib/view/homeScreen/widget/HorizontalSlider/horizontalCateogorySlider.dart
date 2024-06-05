@@ -1,45 +1,94 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HorizontalCategorySlider extends StatelessWidget {
   const HorizontalCategorySlider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // List of category items
+    final List<CategoryItem> categories = [
+      CategoryItem(
+        imageUrl: "assets/images/product1.jpg",
+        title: "Fashion",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/elec.jpeg",
+        title: "Electronics",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/watch.jpeg",
+        title: "Watches",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/jwe.jpeg",
+        title: "Jewellery",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/sports.jpeg",
+        title: "Sports",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/groc.jpeg",
+        title: "Grocery",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/product1.jpg",
+        title: "Fashion",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/elec.jpeg",
+        title: "Electronics",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/sports.jpeg",
+        title: "Sports",
+      ),
+      CategoryItem(
+        imageUrl: "assets/images/groc.jpeg",
+        title: "Grocery",
+      ),
+    ];
+
     return SizedBox(
-      height: 120, // Adjust the height as needed
+      height: 140, // Adjusted height
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: 6,
+        itemCount: categories.length,
         itemBuilder: (_, index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 22),
+            padding: const EdgeInsets.only(left: 16),
             child: Column(
               children: [
                 Container(
-                  width: 56,
-                  height: 56,
-                  padding: const EdgeInsets.all(10),
+                  width: 72,
+                  height: 72,
+                  padding: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.orange,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.orange,
+                      width: 0,
+                    ),
                   ),
-                  child: const Center(
-                    child: FaIcon(
-                      FontAwesomeIcons.shoePrints,
-                      color: Colors.white,
+                  child: ClipOval(
+                    child: Image.asset(
+                      categories[index].imageUrl,
+                      fit: BoxFit.cover,
+                      width: 56,
+                      height: 56,
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 8,
                 ),
-                const SizedBox(
-                  width: 56, // Adjust the width as needed
+                SizedBox(
+                  width: 72, // Adjusted width
                   child: Text(
-                    "Men Shoes",
-                    maxLines: 2,
+                    categories[index].title,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                   ),
@@ -51,4 +100,11 @@ class HorizontalCategorySlider extends StatelessWidget {
       ),
     );
   }
+}
+
+class CategoryItem {
+  final String imageUrl;
+  final String title;
+
+  CategoryItem({required this.imageUrl, required this.title});
 }
