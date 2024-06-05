@@ -162,10 +162,12 @@ class _MobileNumberRegistrationScreenState
           ),
           Container(
             child: BlackButton(
-                onPressed: () {
-                  Get.toNamed("/HomeScreen");
-                },
-                text: "Verify Mobile Number"),
+              onPressed: () {
+                Get.toNamed("/HomeScreen");
+              },
+              text: "Verify Mobile Number",
+              backgroundColor: Colors.blue,
+            ),
           )
         ],
       ),

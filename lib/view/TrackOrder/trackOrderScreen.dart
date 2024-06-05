@@ -58,7 +58,10 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
             height: screenHeight * 0.075,
           ),
           Container(
-            child: BlackButton(onPressed: () {}, text: "Track Your Order"),
+            child: BlackButton(
+              onPressed: () {},
+              text: "Track Your Order",
+            ),
           )
         ],
       ),

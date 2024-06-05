@@ -10,6 +10,9 @@ class BlackButton extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final EdgeInsets padding;
+  final Color borderColor;
+  final double borderWidth;
+  final String? imagePath; // Add this for the image path
 
   const BlackButton({
     required this.onPressed,
@@ -21,6 +24,9 @@ class BlackButton extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.elevation = 8.0,
     this.padding = const EdgeInsets.all(7.5),
+    this.borderColor = Colors.blue,
+    this.borderWidth = 1.4,
+    this.imagePath,
     Key? key,
   }) : super(key: key);
 
@@ -43,16 +49,31 @@ class BlackButton extends StatelessWidget {
           elevation: elevation,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
+            side: BorderSide(color: borderColor, width: borderWidth),
           ),
           padding: padding,
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (imagePath != null)
+              Image.asset(
+                imagePath!,
+                height: 24, // Adjust the height as needed
+                width: 24, // Adjust the width as needed
+              ),
+            if (imagePath != null)
+              SizedBox(width: 8), // Add space between image and text
+            Text(
+              text,
+              style: TextStyle(
+                color: textColor,
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -1,167 +1,3 @@
-//   import 'package:flutter/material.dart';
-//   import 'package:get/get.dart';
-//   import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
-//   import 'package:yam_baba_e_commerce/resources/components/clipPath.dart';
-//   import 'package:yam_baba_e_commerce/resources/components/textField.dart';
-//   import '../../resources/components/blackButton.dart';
-//   import 'loginScreenModel.dart';
-
-//   class LoginScreen extends StatefulWidget {
-//     const LoginScreen({Key? key});
-
-//     @override
-//     State<LoginScreen> createState() => _LoginScreenState();
-//   }
-
-//   class _LoginScreenState extends State<LoginScreen> {
-//     final loginSM = Get.put(LoginScreenModel());
-//     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-//     @override
-//     Widget build(BuildContext context) {
-//       final screenWidth = MediaQuery.of(context).size.width;
-//       final screenHeight = MediaQuery.of(context).size.height;
-
-//       return Scaffold(
-//         backgroundColor: AppColor.whiteColor,
-//         body: Column(
-//           children: [
-//             Stack(
-//               children: [
-//                 ClipPath(
-//                   clipper: CustomClipPath(heightFactor: 1, curveHeight: 60),
-//                   child: Container(
-//                     height: MediaQuery.of(context).size.height * 0.3,
-//                     color: Colors.blue,
-//                     child: const Center(
-//                       child: Image(
-//                         image: AssetImage("assets/images/YambabaLogoWhite.png"),
-//                         height: 190,
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//             Expanded(
-//               child: Padding(
-//                 padding: EdgeInsets.only(
-//                     left: screenWidth * 0.05,
-//                     right: screenWidth * 0.05,
-//                     bottom: screenWidth * 0.05),
-//                 child: Form(
-//                   key: _formKey,
-//                   child: ListView(
-//                     children: [
-//                       Center(
-//                         child: Text(
-//                           'Sign In',
-//                           style: TextStyle(
-//                             fontSize: screenWidth * 0.15,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ),
-//                       SizedBox(height: screenHeight * 0.01),
-//                       Center(
-//                         child: Text(
-//                           'Welcome to the Yam Baba',
-//                           style: TextStyle(
-//                             fontSize: screenWidth * 0.04,
-//                             color: AppColor.blackColor,
-//                           ),
-//                         ),
-//                       ),
-//                       SizedBox(height: screenHeight * 0.02),
-//                       // TextFormField(
-//                       //   controller: loginSM.emailController.value,
-//                       //   keyboardType: TextInputType.emailAddress,
-//                       //   decoration: InputDecoration(
-//                       //     filled: true,
-//                       //     fillColor: AppColor.fieldColor,
-//                       //     hintText: 'Email',
-//                       //     border: OutlineInputBorder(
-//                       //       borderRadius: BorderRadius.circular(10.0),
-//                       //     ),
-//                       //   ),
-//                       //   validator: (value) {
-//                       //     if (value == null || value.isEmpty) {
-//                       //       return 'Please enter your email';
-//                       //     }
-//                       //     if (!RegExp(
-//                       //             r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
-//                       //         .hasMatch(value)) {
-//                       //       return 'Please enter a valid email address';
-//                       //     }
-//                       //     return null;
-//                       //   },
-//                       // ),
-
-//                       CustomTextField(
-//                         controller: loginSM.emailController.value,
-//                         hintText: "Email or Phone Number",
-//                         labelText: "Email or Phone",
-//                         validator:
-//                             validateEmailOrPhone, // Use the appropriate validator
-//                       ),
-
-//                       SizedBox(height: screenHeight * 0.026),
-//                       CustomTextField(
-//                         controller: loginSM.passwordController.value,
-//                         hintText: "Password",
-//                         labelText: "Password",
-//                         obscureText: true, // Enable password hiding
-//                         validator: validatePassword, // Use the password validator
-//                       ),
-//                       SizedBox(height: screenHeight * 0.01),
-//                       Align(
-//                         alignment: Alignment.centerRight,
-//                         child: TextButton(
-//                           onPressed: () {
-//                             Get.toNamed("/ForgotPasswordScreen");
-//                           },
-//                           child: const Text(
-//                             'Forgot Password?',
-//                             style: TextStyle(color: Colors.blue),
-//                           ),
-//                         ),
-//                       ),
-//                       SizedBox(height: screenHeight * 0.035),
-//                       Center(
-//                         child: BlackButton(
-//                           onPressed: () {
-//                             if (_formKey.currentState!.validate()) {
-//                               // Implement login action
-//                             }
-//                           },
-//                           text: "Sign In",
-//                           backgroundColor: Colors.blue,
-//                         ),
-//                       ),
-//                       SizedBox(height: screenHeight * 0.02),
-//                       Align(
-//                         alignment: Alignment.center,
-//                         child: TextButton(
-//                           onPressed: () {
-//                             Get.toNamed('/SignupScreen');
-//                           },
-//                           child: const Text(
-//                             'Not a member? Join Now',
-//                             style: TextStyle(color: Colors.blue),
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       );
-//     }
-//   }
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
@@ -211,11 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(
-                  left: screenWidth * 0.05,
-                  right: screenWidth * 0.05,
-                  bottom: screenWidth * 0.05,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: Form(
                   key: _formKey,
                   child: ListView(
@@ -254,7 +86,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: true,
                         validator: validatePassword,
                       ),
-                      // SizedBox(height: screenHeight * 0.0001),
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
@@ -265,20 +96,22 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      // SizedBox(height: screenHeight * 0.035),
+                      SizedBox(height: screenHeight * 0.010),
                       Center(
                         child: BlackButton(
                           onPressed: () {
-                            if (_formKey.currentState!.validate()) {}
+                            if (_formKey.currentState!.validate()) {
+                              // Handle sign in
+                            }
                           },
                           text: "Sign In",
                           backgroundColor: Colors.blue,
+                          elevation: 3,
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.025),
-
+                      SizedBox(height: screenHeight * 0.012),
                       const Padding(
-                        padding: EdgeInsets.only(left: 25, right: 25),
+                        padding: EdgeInsets.symmetric(horizontal: 25),
                         child: Row(
                           children: <Widget>[
                             Expanded(
@@ -291,9 +124,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               padding: EdgeInsets.symmetric(horizontal: 10.0),
                               child: Text(
                                 "Or sign in with",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 16),
                               ),
                             ),
                             Expanded(
@@ -305,14 +137,42 @@ class _LoginScreenState extends State<LoginScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.02),
+                      SizedBox(height: screenHeight * 0.012),
+                      _buildSocialButton(
+                        onTap: () {
+                          // Handle Google login
+                        },
+                        imagePath: "assets/images/google.png",
+                        text: "Continue with Google    ",
+                        context: context,
+                      ),
+                      SizedBox(height: screenHeight * 0.012),
+                      _buildSocialButton(
+                        onTap: () {
+                          // Handle Facebook login
+                        },
+                        imagePath: "assets/images/fb.png",
+                        text: "Continue with Facebook",
+                        context: context,
+                      ),
+                      SizedBox(height: screenHeight * 0.020),
                       Align(
                         alignment: Alignment.center,
-                        child: TextButton(
-                          onPressed: () => Get.toNamed('/SignupScreen'),
-                          child: const Text(
-                            'Not a member? Join Now',
-                            style: TextStyle(color: Colors.blue),
+                        child: RichText(
+                          text: TextSpan(
+                            text: "Don't have an account? ",
+                            style: const TextStyle(color: Colors.black),
+                            children: [
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () => Get.toNamed('/SignupScreen'),
+                                  child: const Text(
+                                    'Register',
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -326,190 +186,39 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  Widget _buildSocialButton({
+    required VoidCallback onTap,
+    required String imagePath,
+    required String text,
+    required BuildContext context,
+  }) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: screenHeight * 0.055,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imagePath,
+              height: 24,
+              width: 24,
+            ),
+            const SizedBox(width: 10),
+            Text(
+              text,
+              style: const TextStyle(color: Colors.black),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // import 'package:flutter/material.dart';
-// // import 'package:get/get.dart';
-// // import 'package:yam_baba_e_commerce/resources/colors/colors.dart';
-// // import 'package:yam_baba_e_commerce/resources/components/clipPath.dart';
-// // import 'package:yam_baba_e_commerce/resources/components/blackButton.dart';
-
-// // import 'login_screen_model.dart';
-
-
-// // class LoginScreen extends StatefulWidget {
-// //   const LoginScreen({Key? key});
-
-// //   @override
-// //   State<LoginScreen> createState() => _LoginScreenState();
-// // }
-
-// // class _LoginScreenState extends State<LoginScreen> {
-// //   final loginSM = Get.put(LoginScreenModel());
-// //   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     final screenWidth = MediaQuery.of(context).size.width;
-// //     final screenHeight = MediaQuery.of(context).size.height;
-
-// //     return Scaffold(
-// //       backgroundColor: AppColor.whiteColor,
-// //       body: Column(
-// //         children: [
-// //           Stack(
-// //             children: [
-// //               ClipPath(
-// //                 clipper: CustomClipPath(heightFactor: 1, curveHeight: 60),
-// //                 child: Container(
-// //                   height: MediaQuery.of(context).size.height * 0.3,
-// //                   color: Colors.blue,
-// //                   child: const Center(
-// //                     child: Image(
-// //                       image: AssetImage("assets/images/YambabaLogoWhite.png"),
-// //                       height: 190,
-// //                     ),
-// //                   ),
-// //                 ),
-// //               ),
-// //             ],
-// //           ),
-// //           Expanded(
-// //             child: Padding(
-// //               padding: EdgeInsets.only(
-// //                   left: screenWidth * 0.05,
-// //                   right: screenWidth * 0.05,
-// //                   bottom: screenWidth * 0.05),
-// //               child: Form(
-// //                 key: _formKey,
-// //                 child: ListView(
-// //                   children: [
-// //                     Center(
-// //                       child: Text(
-// //                         'Welcome Back!',
-// //                         style: TextStyle(
-// //                           fontSize: screenWidth * 0.09,
-// //                           fontWeight: FontWeight.bold,
-// //                         ),
-// //                       ),
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.01),
-// //                     Center(
-// //                       child: Text(
-// //                         'Sign in to your account',
-// //                         style: TextStyle(
-// //                           fontSize: screenWidth * 0.04,
-// //                           color: AppColor.blackColor,
-// //                         ),
-// //                       ),
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.02),
-// //                     TextFormField(
-// //                       controller: loginSM.emailController.value,
-// //                       keyboardType: TextInputType.emailAddress,
-// //                       decoration: InputDecoration(
-// //                         filled: true,
-// //                         fillColor: AppColor.fieldColor,
-// //                         hintText: 'Email',
-// //                         border: OutlineInputBorder(
-// //                           borderRadius: BorderRadius.circular(10.0),
-// //                         ),
-// //                       ),
-// //                       validator: (value) {
-// //                         if (value == null || value.isEmpty) {
-// //                           return 'Please enter your email';
-// //                         }
-// //                         if (!RegExp(
-// //                                 r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
-// //                             .hasMatch(value)) {
-// //                           return 'Please enter a valid email address';
-// //                         }
-// //                         return null;
-// //                       },
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.026),
-// //                     TextFormField(
-// //                       controller: loginSM.passwordController.value,
-// //                       obscureText: true,
-// //                       decoration: InputDecoration(
-// //                         filled: true,
-// //                         fillColor: AppColor.fieldColor,
-// //                         hintText: 'Password',
-// //                         border: OutlineInputBorder(
-// //                           borderRadius: BorderRadius.circular(10.0),
-// //                         ),
-// //                       ),
-// //                       validator: (value) {
-// //                         if (value == null || value.isEmpty) {
-// //                           return 'Please enter your password';
-// //                         }
-// //                         return null;
-// //                       },
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.01),
-// //                     Align(
-// //                       alignment: Alignment.centerRight,
-// //                       child: TextButton(
-// //                         onPressed: () {
-// //                           Get.toNamed("/ForgotPasswordScreen");
-// //                         },
-// //                         child: const Text(
-// //                           'Forgot Password?',
-// //                           style: TextStyle(color: Colors.blue),
-// //                         ),
-// //                       ),
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.035),
-// //                     Center(
-// //                       child: Obx(() {
-// //                         if (loginSM.isLoading.value) {
-// //                           return CircularProgressIndicator();
-// //                         } else {
-// //                           return BlackButton(
-// //                             onPressed: () {
-// //                               if (_formKey.currentState!.validate()) {
-// //                                 loginSM.login();
-// //                               }
-// //                             },
-// //                             text: "Sign In",
-// //                             backgroundColor: Colors.blue,
-// //                           );
-// //                         }
-// //                       }),
-// //                     ),
-// //                     SizedBox(height: screenHeight * 0.02),
-// //                     Align(
-// //                       alignment: Alignment.center,
-// //                       child: TextButton(
-// //                         onPressed: () {
-// //                           Get.toNamed('/SignupScreen');
-// //                         },
-// //                         child: const Text(
-// //                           'Not a member? Join Now',
-// //                           style: TextStyle(color: Colors.blue),
-// //                         ),
-// //                       ),
-// //                     ),
-// //                   ],
-// //                 ),
-// //               ),
-// //             ),
-// //           ),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
