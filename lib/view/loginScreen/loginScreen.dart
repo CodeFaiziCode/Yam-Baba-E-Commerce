@@ -239,7 +239,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.01),
+                      SizedBox(height: screenHeight * 0.02),
                       CustomTextField(
                         controller: loginSM.emailController.value,
                         hintText: "Email or Phone Number",
@@ -254,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: true,
                         validator: validatePassword,
                       ),
-                      SizedBox(height: screenHeight * 0.01),
+                      // SizedBox(height: screenHeight * 0.0001),
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
@@ -265,7 +265,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.035),
+                      // SizedBox(height: screenHeight * 0.035),
                       Center(
                         child: BlackButton(
                           onPressed: () {
@@ -273,6 +273,36 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           text: "Sign In",
                           backgroundColor: Colors.blue,
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.025),
+
+                      const Padding(
+                        padding: EdgeInsets.only(left: 25, right: 25),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text(
+                                "Or sign in with",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 1,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.02),

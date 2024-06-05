@@ -20,7 +20,7 @@ class BlackButton extends StatelessWidget {
     this.fontSize = 20.0,
     this.fontWeight = FontWeight.normal,
     this.elevation = 8.0,
-    this.padding = const EdgeInsets.all(12.0),
+    this.padding = const EdgeInsets.all(7.5),
     Key? key,
   }) : super(key: key);
 
@@ -31,7 +31,7 @@ class BlackButton extends StatelessWidget {
     final buttonWidth =
         screenWidth * 0.92; // Button width is 80% of screen width
     final buttonHeight =
-        screenHeight * 0.07; // Button height is 7% of screen height
+        screenHeight * 0.05; // Button height is 7% of screen height
 
     return SizedBox(
       width: buttonWidth,
