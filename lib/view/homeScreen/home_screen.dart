@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:yam_baba_e_commerce/view/homeScreen/widget/flash%20sale/flash_sale.dart';
 import 'dart:io';
 
 // Importing specific components
@@ -39,14 +40,6 @@ class ProductCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.grey,
-        //     spreadRadius: 1,
-        //     blurRadius: 1,
-        //     offset: const Offset(0, 1),
-        //   ),
-        // ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +60,7 @@ class ProductCardWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
             child: Text(
-              maxLines: 01,
+              maxLines: 1,
               product.name,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
@@ -79,12 +72,11 @@ class ProductCardWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
             child: Text(
-              maxLines: 01,
+              maxLines: 1,
               product.description,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 13,
-                // fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -116,8 +108,6 @@ class ProductCardWidget extends StatelessWidget {
     );
   }
 }
-
-//asdfasdf asdf asdf asdf asdf asdf asdf asdf asf asdf asdf asdf as fzxcvzxczsvasdfsczxcvzsdvasavdsdfas dasd vasdva sdgas etas dfvxdvasvasvasdfasdfa v sdfvasdasf
 
 // Home screen widget
 class HomeScreen extends StatefulWidget {
@@ -210,51 +200,50 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         drawer: AppDrawer(),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
-              child: Container(
-                height: 45,
-                width: screenWidth,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  color: Colors.white,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        size: 30,
-                      ),
-                      prefixIconColor: Colors.black54,
-                      hintText: 'Search On Yambaba',
-                      fillColor:
-                          Colors.grey[200], // Set fill color to a light gray
-                      filled: true, // Enable fill color
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 12.0), // Adjust this value as needed
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12.0),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
+                child: Container(
+                  height: 45,
+                  width: screenWidth,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(
+                          Icons.search,
+                          size: 30,
                         ),
-                        borderSide: BorderSide
-                            .none, // Remove border to match fill color
+                        prefixIconColor: Colors.black54,
+                        hintText: 'Search On Yambaba',
+                        fillColor:
+                            Colors.grey[200], // Set fill color to a light gray
+                        filled: true, // Enable fill color
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 12.0), // Adjust this value as needed
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12.0),
+                          ),
+                          borderSide: BorderSide
+                              .none, // Remove border to match fill color
+                        ),
                       ),
+                      onChanged: (query) {},
                     ),
-                    onChanged: (query) {},
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 5.0),
-            Expanded(
-              child: ListView(
+              const SizedBox(height: 5.0),
+              Column(
                 children: [
                   const CarousleSlider(),
-
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
@@ -283,9 +272,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
                   const HorizontalCategorySlider(),
-                  //2nd line cat
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
@@ -300,8 +287,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         const Spacer(),
                         TextButton(
                           onPressed: () {
-                            final controller = Get.find<NavigationController>();
-                            controller.selectedIndex.value = 1;
+                            navigator?.push(MaterialPageRoute(
+                              builder: (context) => Flash(),
+                            ));
                           },
                           child: Text(
                             "See All",
@@ -315,7 +303,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
                   const HorizontalCategorySlider(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -345,10 +332,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-
-                      //jkl;a sdfl;kjakl;sfj klasdjf klasjdfkl; jasdkl;fj askl;dj faksfjasdkl;jfckl;asdj fkl;asdjfkl ;asdkl;f jaskldj kl;asj kl;as jkl;as kl;asj fklasj f klaj;
-
-                      // const SizedBox(height: 2),
                       Padding(
                         padding: const EdgeInsets.only(left: 12),
                         child: SizedBox(
@@ -373,7 +356,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  // Recommended products section
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Column(
@@ -401,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         SizedBox(
                           height: 200,
                           child: ListView.builder(
@@ -426,8 +408,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
