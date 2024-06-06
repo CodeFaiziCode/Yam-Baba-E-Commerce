@@ -10,6 +10,16 @@ import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
 
+class FlashSaleProduct {
+  final String imagePath;
+  final int discountPercentage;
+
+  FlashSaleProduct({
+    required this.imagePath,
+    required this.discountPercentage,
+  });
+}
+
 // Define the Product class
 class Product {
   final String name;
@@ -118,6 +128,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<FlashSaleProduct> flashSaleProducts = [
+    FlashSaleProduct(
+        imagePath: 'assets/images/product1.jpg', discountPercentage: 20),
+    FlashSaleProduct(
+        imagePath: 'assets/images/product2.jpg', discountPercentage: 10),
+    FlashSaleProduct(
+        imagePath: 'assets/images/product3.jpg', discountPercentage: 25),
+    FlashSaleProduct(
+        imagePath: 'assets/images/product1.jpg', discountPercentage: 20),
+  ];
+
   final List<Product> products = [
     Product(
       name: 'Lipstick Red blue green',
@@ -286,11 +307,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const Spacer(),
                         TextButton(
-                          onPressed: () {
-                            navigator?.push(MaterialPageRoute(
-                              builder: (context) => Flash(),
-                            ));
-                          },
+                          onPressed: () {},
+                          //   navigator?.push(MaterialPageRoute(
+                          //     builder: (context) => Flash(),
+                          //   ));
+                          // },
+
                           child: Text(
                             "See All",
                             style: TextStyle(
@@ -364,7 +386,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           children: [
                             Text(
-                              "Recommended",
+                              "Flash Sale",
                               style: TextStyle(
                                   fontSize: screenHeight * 0.024,
                                   fontWeight: FontWeight.bold),
@@ -383,22 +405,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10),
+                        // SizedBox(height: 08),
                         SizedBox(
-                          height: 200,
+                          height: 160,
                           child: ListView.builder(
+                            // physics: NeverScrollableScrollPhysics(),
                             scrollDirection: Axis.horizontal,
-                            itemCount: products.length,
+                            itemCount: flashSaleProducts.length,
                             itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  ProductCardWidget(
-                                    product: products[index],
-                                  ),
-                                  const SizedBox(
-                                      height:
-                                          10), // Space at the bottom of each card
-                                ],
+                              return FlashSaleProductImageWithLabel(
+                                flashSaleProduct: flashSaleProducts[index],
                               );
                             },
                           ),
