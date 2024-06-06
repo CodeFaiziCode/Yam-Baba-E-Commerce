@@ -50,7 +50,7 @@ class HorizontalCategorySlider extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: 140, // Adjusted height
+      height: 100, // Adjusted height
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,

@@ -33,57 +33,80 @@ class ProductCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5.0),
-      width: 150.0,
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      width: 124,
+      height: 190,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey.shade200,
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.grey,
+        //     spreadRadius: 1,
+        //     blurRadius: 1,
+        //     offset: const Offset(0, 1),
+        //   ),
+        // ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(7.5),
+            padding:
+                const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 4),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
               child: Image.asset(
                 product.imageUrl,
                 width: double.infinity,
-                height: 100.0,
+                height: 112.0,
                 fit: BoxFit.fill,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
             child: Text(
+              maxLines: 01,
               product.name,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 16.0,
+                fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
+            child: Text(
+              maxLines: 01,
+              product.description,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 13,
+                // fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 2, left: 8),
             child: Row(
               children: [
                 Text(
                   '\$${product.price.toStringAsFixed(2)}',
-                  style: const TextStyle(fontSize: 14.0),
+                  style: const TextStyle(
+                      fontSize: 14.0, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(width: 25),
-                const Icon(Icons.favorite_outline),
-                const SizedBox(width: 8),
-                const Icon(Icons.add_shopping_cart_outlined),
+                const SizedBox(width: 21),
+                const Icon(
+                  Icons.favorite_outline,
+                  size: 19,
+                ),
+                const SizedBox(width: 4),
+                const Icon(
+                  Icons.add_shopping_cart_outlined,
+                  size: 20,
+                ),
               ],
             ),
           ),
@@ -93,6 +116,8 @@ class ProductCardWidget extends StatelessWidget {
     );
   }
 }
+
+//asdfasdf asdf asdf asdf asdf asdf asdf asdf asf asdf asdf asdf as fzxcvzxczsvasdfsczxcvzsdvasavdsdfas dasd vasdva sdgas etas dfvxdvasvasvasdfasdfa v sdfvasdasf
 
 // Home screen widget
 class HomeScreen extends StatefulWidget {
@@ -105,28 +130,28 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final List<Product> products = [
     Product(
-      name: 'Lipstick Red',
+      name: 'Lipstick Red blue green',
       imageUrl: 'assets/images/product3.jpg',
       price: 19.99,
-      description: 'This is the description for product 1',
+      description: 'product 1 adfasdf asdf asdf asdf as',
     ),
     Product(
       name: 'Lipstick Blue',
       imageUrl: 'assets/images/product2.jpg',
       price: 29.99,
-      description: 'This is the description for product 2',
+      description: 'product 2',
     ),
     Product(
       name: 'Lipstick Green',
       imageUrl: 'assets/images/product1.jpg',
       price: 24.99,
-      description: 'This is the description for product 3',
+      description: 'product 3',
     ),
     Product(
       name: 'Lipstick Black',
       imageUrl: 'assets/images/product4.jpg',
       price: 14.99,
-      description: 'This is the description for product 4',
+      description: 'product 4',
     ),
   ];
 
@@ -190,27 +215,33 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
               child: Container(
-                height: 55,
+                height: 45,
                 width: screenWidth,
                 decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.circular(12.0), // Increased border radius
+                  borderRadius: BorderRadius.circular(12.0),
                   color: Colors.white,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                   child: TextField(
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(
                         Icons.search,
                         size: 30,
                       ),
                       prefixIconColor: Colors.black54,
                       hintText: 'Search On Yambaba',
-                      border: OutlineInputBorder(
+                      fillColor:
+                          Colors.grey[200], // Set fill color to a light gray
+                      filled: true, // Enable fill color
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 12.0), // Adjust this value as needed
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(12.0),
                         ),
+                        borderSide: BorderSide
+                            .none, // Remove border to match fill color
                       ),
                     ),
                     onChanged: (query) {},
@@ -218,20 +249,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 5.0),
+            const SizedBox(height: 5.0),
             Expanded(
               child: ListView(
                 children: [
                   const CarousleSlider(),
 
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Hot Categories",
-                          style: TextStyle(fontSize: screenHeight * 0.02),
+                          style: TextStyle(
+                              fontSize: screenHeight * 0.023,
+                              fontWeight: FontWeight.bold),
                         ),
                         TextButton(
                           onPressed: () {
@@ -250,18 +283,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  // const SizedBox(height: 5.0),
+
                   const HorizontalCategorySlider(),
                   //2nd line cat
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Top Products",
-                          style: TextStyle(fontSize: screenHeight * 0.02),
+                          style: TextStyle(
+                              fontSize: screenHeight * 0.023,
+                              fontWeight: FontWeight.bold),
                         ),
+                        const Spacer(),
                         TextButton(
                           onPressed: () {
                             final controller = Get.find<NavigationController>();
@@ -279,18 +315,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  // const SizedBox(height: 5.0),
+
                   const HorizontalCategorySlider(),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Row(
                           children: [
                             Text(
-                              "Mega Deals",
-                              style: TextStyle(fontSize: screenHeight * 0.03),
+                              "New Items",
+                              style: TextStyle(
+                                  fontSize: screenHeight * 0.023,
+                                  fontWeight: FontWeight.bold),
                             ),
                             const Spacer(),
                             TextButton(
@@ -306,8 +344,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
-                        SizedBox(
+                      ),
+
+                      //jkl;a sdfl;kjakl;sfj klasdjf klasjdfkl; jasdkl;fj askl;dj faksfjasdkl;jfckl;asdj fkl;asdjfkl ;asdkl;f jaskldj kl;asj kl;as jkl;as kl;asj fklasj f klaj;
+
+                      // const SizedBox(height: 2),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: SizedBox(
                           height: 200,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -326,12 +370,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   // Recommended products section
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 15),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -339,7 +383,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Text(
                               "Recommended",
-                              style: TextStyle(fontSize: screenHeight * 0.03),
+                              style: TextStyle(
+                                  fontSize: screenHeight * 0.024,
+                                  fontWeight: FontWeight.bold),
                             ),
                             const Spacer(),
                             TextButton(
