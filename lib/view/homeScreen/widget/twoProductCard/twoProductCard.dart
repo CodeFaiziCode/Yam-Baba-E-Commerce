@@ -64,17 +64,17 @@ class TwoProductCardWidget extends StatelessWidget {
                 Text(
                   '\AED ${twoProduct.TwoProduct_price.toStringAsFixed(2)}',
                   style: const TextStyle(
-                      fontSize: 16.0, fontWeight: FontWeight.bold),
+                      fontSize: 14.0, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(width: 20),
                 const Icon(
                   Icons.favorite_outline,
-                  size: 25,
+                  size: 22,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 5),
                 const Icon(
                   Icons.add_shopping_cart_outlined,
-                  size: 25,
+                  size: 22,
                 ),
               ],
             ),

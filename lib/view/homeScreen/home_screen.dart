@@ -607,7 +607,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: SizedBox(
-                  height: 1147, // Adjust this height according to your needs
+                  height: 1155, // Adjust this height according to your needs
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: (Two_products.length / 2).ceil(),
@@ -615,7 +615,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int firstIndex = index * 2;
                       int secondIndex = firstIndex + 1;
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.only(bottom: 12),
                         child: Row(
                           children: [
                             Expanded(
@@ -624,7 +624,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             if (secondIndex < Two_products.length)
-                              const SizedBox(width: 10),
+                              SizedBox(width: 4),
                             if (secondIndex < Two_products.length)
                               Expanded(
                                 child: TwoProductCardWidget(
