@@ -10,6 +10,7 @@ import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
 import 'widget/flash sale/flash_sale.dart';
 import 'widget/hot deals/hotDeals.dart';
+import 'widget/twoProductCard/twoProductCard.dart';
 
 class FlashSaleProduct {
   final String imagePath;
@@ -41,6 +42,23 @@ class Product {
     required this.description,
     required this.imageUrl,
     required this.price,
+  });
+}
+
+// two product
+
+// Define the Product class
+class TwoProduct {
+  final String Two_name;
+  final String TwoProduct_imageUrl;
+  final double TwoProduct_price;
+  final String TwoProduct_description;
+
+  TwoProduct({
+    required this.Two_name,
+    required this.TwoProduct_description,
+    required this.TwoProduct_imageUrl,
+    required this.TwoProduct_price,
   });
 }
 
@@ -128,6 +146,8 @@ class ProductCardWidget extends StatelessWidget {
   }
 }
 
+// product card 2 cards display
+
 // Home screen widget
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -184,6 +204,71 @@ class _HomeScreenState extends State<HomeScreen> {
       imageUrl: 'assets/images/product4.jpg',
       price: 14.99,
       description: 'product 4',
+    ),
+  ];
+
+  // two card images
+
+  final List<TwoProduct> Two_products = [
+    TwoProduct(
+      Two_name: 'Watches',
+      TwoProduct_imageUrl: 'assets/images/watch.jpeg',
+      TwoProduct_price: 49.99,
+      TwoProduct_description: 'Stylish and trendy watches for all occasions.',
+    ),
+    TwoProduct(
+      Two_name: 'Jewellery',
+      TwoProduct_imageUrl: 'assets/images/jwe.jpeg',
+      TwoProduct_price: 79.99,
+      TwoProduct_description: 'Elegant jewellery to complement your outfit.',
+    ),
+    TwoProduct(
+      Two_name: 'Bands',
+      TwoProduct_imageUrl: 'assets/images/bands.jpeg',
+      TwoProduct_price: 19.99,
+      TwoProduct_description: 'Fashionable bands to enhance your look.',
+    ),
+    TwoProduct(
+      Two_name: 'Lipstick',
+      TwoProduct_imageUrl: 'assets/images/product1.jpg',
+      TwoProduct_price: 14.99,
+      TwoProduct_description: 'Beautiful lipstick shades for every mood.',
+    ),
+    TwoProduct(
+      Two_name: 'Cap',
+      TwoProduct_imageUrl: 'assets/images/caps.jpeg',
+      TwoProduct_price: 12.99,
+      TwoProduct_description: 'Stylish caps to protect you from the sun.',
+    ),
+    TwoProduct(
+      Two_name: 'Rings',
+      TwoProduct_imageUrl: 'assets/images/rings.jpeg',
+      TwoProduct_price: 29.99,
+      TwoProduct_description: 'Elegant rings to add charm to your hands.',
+    ),
+    TwoProduct(
+      Two_name: 'Makeup',
+      TwoProduct_imageUrl: 'assets/images/product1.jpg',
+      TwoProduct_price: 39.99,
+      TwoProduct_description: 'Complete makeup set for your beauty needs.',
+    ),
+    TwoProduct(
+      Two_name: 'Cloths',
+      TwoProduct_imageUrl: 'assets/images/cloths.jpeg',
+      TwoProduct_price: 49.99,
+      TwoProduct_description: 'Trendy clothes to keep you in style.',
+    ),
+    TwoProduct(
+      Two_name: 'Sports',
+      TwoProduct_imageUrl: 'assets/images/sports.jpeg',
+      TwoProduct_price: 59.99,
+      TwoProduct_description: 'Sports gear for all your athletic needs.',
+    ),
+    TwoProduct(
+      Two_name: 'Grocery',
+      TwoProduct_imageUrl: 'assets/images/groc.jpeg',
+      TwoProduct_price: 9.99,
+      TwoProduct_description: 'Fresh groceries for your daily needs.',
     ),
   ];
 
@@ -282,26 +367,141 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5.0),
-              Column(
-                children: [
-                  const CarousleSlider(),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // const SizedBox(height: 5.0),
+              const CarousleSlider(),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Hot Categories",
+                      style: TextStyle(
+                          fontSize: screenHeight * 0.023,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        final controller = Get.find<NavigationController>();
+                        controller.selectedIndex.value = 1;
+                      },
+                      child: Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.0175,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const HorizontalCategorySlider(),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Top Products",
+                      style: TextStyle(
+                          fontSize: screenHeight * 0.023,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    TextButton(
+                      onPressed: () {},
+                      //   navigator?.push(MaterialPageRoute(
+                      //     builder: (context) => Flash(),
+                      //   ));
+                      // },
+
+                      child: Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.0175,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      // child: Text(
+                      //   "See All",
+                      //   style: TextStyle(
+                      //     fontSize: screenHeight * 0.0175,
+                      //     fontWeight: FontWeight.bold,
+                      //     color: Colors.blue,
+                      //   ),
+                      // ),
+                    ),
+                  ],
+                ),
+              ),
+              const HorizontalCategorySlider(),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  children: [
+                    Text(
+                      "New Items",
+                      style: TextStyle(
+                          fontSize: screenHeight * 0.023,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.0175,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: SizedBox(
+                  height: 200,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          ProductCardWidget(
+                            product: products[index],
+                          ),
+                          const SizedBox(
+                              height: 10), // Space at the bottom of each card
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ),
+
+              //---------------------
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
                         Text(
-                          "Hot Categories",
+                          "Flash Sale",
                           style: TextStyle(
-                              fontSize: screenHeight * 0.023,
+                              fontSize: screenHeight * 0.024,
                               fontWeight: FontWeight.bold),
                         ),
+                        const Spacer(),
                         TextButton(
-                          onPressed: () {
-                            final controller = Get.find<NavigationController>();
-                            controller.selectedIndex.value = 1;
-                          },
+                          onPressed: () {},
                           child: Text(
                             "See All",
                             style: TextStyle(
@@ -313,15 +513,35 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                  ),
-                  const HorizontalCategorySlider(),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                    // SizedBox(height: 08),
+                    SizedBox(
+                      height: 120,
+                      child: ListView.builder(
+                        // physics: NeverScrollableScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: flashSaleProducts.length,
+                        itemBuilder: (context, index) {
+                          return FlashSaleProductImageWithLabel(
+                            flashSaleProduct: flashSaleProducts[index],
+                          );
+                        },
+                      ),
+                    ),
+
+                    // Add a SizedBox with reduced height
+                  ],
+                ),
+              ),
+              //---------------------
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  children: [
+                    Row(
                       children: [
                         Text(
-                          "Top Products",
+                          "Hot Products",
                           style: TextStyle(
                               fontSize: screenHeight * 0.023,
                               fontWeight: FontWeight.bold),
@@ -329,11 +549,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         const Spacer(),
                         TextButton(
                           onPressed: () {},
-                          //   navigator?.push(MaterialPageRoute(
-                          //     builder: (context) => Flash(),
-                          //   ));
-                          // },
-
                           child: Text(
                             "See All",
                             style: TextStyle(
@@ -342,173 +557,86 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.blue,
                             ),
                           ),
-                          // child: Text(
-                          //   "See All",
-                          //   style: TextStyle(
-                          //     fontSize: screenHeight * 0.0175,
-                          //     fontWeight: FontWeight.bold,
-                          //     color: Colors.blue,
-                          //   ),
-                          // ),
                         ),
                       ],
                     ),
-                  ),
-                  const HorizontalCategorySlider(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Row(
-                          children: [
-                            Text(
-                              "New Items",
-                              style: TextStyle(
-                                  fontSize: screenHeight * 0.023,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                  fontSize: screenHeight * 0.0175,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: hotDealsProducts.length,
+                        itemBuilder: (context, index) {
+                          return HotDealsProductImage(
+                            hotDealsProduct: hotDealsProducts[index],
+                            containerWidth:
+                                93.0, // You can change this value as needed
+                            containerHeight:
+                                124.0, // You can change this value as needed
+                          );
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 12),
-                        child: SizedBox(
-                          height: 200,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: products.length,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  ProductCardWidget(
-                                    product: products[index],
-                                  ),
-                                  const SizedBox(
-                                      height:
-                                          10), // Space at the bottom of each card
-                                ],
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  //---------------------
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Hot Products",
-                              style: TextStyle(
-                                  fontSize: screenHeight * 0.023,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                  fontSize: screenHeight * 0.0175,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 12),
-                        child: SizedBox(
-                          height: 200,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: hotDealsProducts.length,
-                            itemBuilder: (context, index) {
-                              return HotDealsProductImage(
-                                hotDealsProduct: hotDealsProducts[index],
-                                containerWidth:
-                                    93.0, // You can change this value as needed
-                                containerHeight:
-                                    124.0, // You can change this value as needed
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Flash Sale",
-                              style: TextStyle(
-                                  fontSize: screenHeight * 0.024,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                  fontSize: screenHeight * 0.0175,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        // SizedBox(height: 08),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 0.0),
-                          child: SizedBox(
-                            height: 160,
-                            child: ListView.builder(
-                              // physics: NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.horizontal,
-                              itemCount: flashSaleProducts.length,
-                              itemBuilder: (context, index) {
-                                return FlashSaleProductImageWithLabel(
-                                  flashSaleProduct: flashSaleProducts[index],
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-
-                        // Add a SizedBox with reduced height
-                      ],
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Row(
+                  children: [
+                    Text(
+                      "For Pick",
+                      style: TextStyle(
+                          fontSize: screenHeight * 0.023,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: screenHeight * 0.0175,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15),
+                child: SizedBox(
+                  height: 1147, // Adjust this height according to your needs
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: (Two_products.length / 2).ceil(),
+                    itemBuilder: (context, index) {
+                      int firstIndex = index * 2;
+                      int secondIndex = firstIndex + 1;
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: TwoProductCardWidget(
+                                twoProduct: Two_products[firstIndex],
+                              ),
+                            ),
+                            if (secondIndex < Two_products.length)
+                              const SizedBox(width: 10),
+                            if (secondIndex < Two_products.length)
+                              Expanded(
+                                child: TwoProductCardWidget(
+                                  twoProduct: Two_products[secondIndex],
+                                ),
+                              ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
-                  // SizedBox(height: 1),
-                ],
+                ),
               ),
             ],
           ),

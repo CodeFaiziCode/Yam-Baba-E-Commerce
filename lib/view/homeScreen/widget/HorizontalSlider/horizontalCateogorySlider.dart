@@ -57,13 +57,13 @@ class HorizontalCategorySlider extends StatelessWidget {
         itemCount: categories.length,
         itemBuilder: (_, index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 12),
+            padding: const EdgeInsets.only(left: 5),
             child: Column(
               children: [
                 Container(
-                  width: 67,
-                  height: 67,
-                  padding: const EdgeInsets.all(3),
+                  width: 60,
+                  height: 60,
+                  padding: const EdgeInsets.all(2.5),
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     shape: BoxShape.circle,
