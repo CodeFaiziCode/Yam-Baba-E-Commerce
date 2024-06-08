@@ -177,7 +177,7 @@ class NavigationMenu extends StatelessWidget {
             onTap: (index) => controller.selectedIndex.value = index,
             items: const [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
@@ -198,7 +198,7 @@ class NavigationMenu extends StatelessWidget {
                 label: 'Category',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(Icons.person_outline),
                 label: 'Profile',
               ),
             ],

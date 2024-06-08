@@ -17,7 +17,7 @@ class HorizontalCategorySlider extends StatelessWidget {
       ),
       CategoryItem(
         imageUrl: "assets/images/watch.jpeg",
-        title: "Watches",
+        title: "Men Watches",
       ),
       CategoryItem(
         imageUrl: "assets/images/jwe.jpeg",
@@ -50,7 +50,7 @@ class HorizontalCategorySlider extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: 100, // Adjusted height
+      height: 88, // Adjusted height
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,

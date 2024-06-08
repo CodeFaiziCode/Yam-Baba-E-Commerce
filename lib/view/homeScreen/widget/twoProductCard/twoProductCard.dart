@@ -13,7 +13,7 @@ class TwoProductCardWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 4),
       width: 200,
-      height: 221,
+      height: 220,
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
@@ -29,13 +29,13 @@ class TwoProductCardWidget extends StatelessWidget {
               child: Image.asset(
                 twoProduct.TwoProduct_imageUrl,
                 width: double.infinity,
-                height: 130.0,
+                height: 130,
                 fit: BoxFit.fill,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
+            padding: const EdgeInsets.only(top: 2.5, left: 8, right: 7),
             child: Text(
               twoProduct.Two_name,
               maxLines: 1,
@@ -58,7 +58,7 @@ class TwoProductCardWidget extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 5, left: 10),
+            padding: const EdgeInsets.only(top: 7, left: 10),
             child: Row(
               children: [
                 Text(
@@ -79,7 +79,7 @@ class TwoProductCardWidget extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 10),
+          // const SizedBox(height: 10),
         ],
       ),
     );

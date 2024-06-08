@@ -439,7 +439,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const HorizontalCategorySlider(),
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20, top: 3),
                 child: Row(
                   children: [
                     Text(
@@ -607,7 +607,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: SizedBox(
-                  height: 1155, // Adjust this height according to your needs
+                  height: 1165, // Adjust this height according to your needs
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: (Two_products.length / 2).ceil(),

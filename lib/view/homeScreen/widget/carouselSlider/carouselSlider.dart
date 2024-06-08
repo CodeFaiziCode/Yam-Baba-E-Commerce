@@ -66,8 +66,8 @@ class _CarousleSliderState extends State<CarousleSlider> {
                   _current = entry.key;
                 }),
                 child: Container(
-                  width: 8.0,
-                  height: 8.0,
+                  width: 9.0,
+                  height: 9.0,
                   margin: const EdgeInsets.symmetric(
                       vertical: 8.0, horizontal: 4.0),
                   decoration: BoxDecoration(
