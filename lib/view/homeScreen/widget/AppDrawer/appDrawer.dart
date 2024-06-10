@@ -164,6 +164,9 @@ import '../../../../resources/components/navigationBar.dart';
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    // ignore: unused_local_variable
+    final screenWidth = MediaQuery.of(context).size.width;
     return Drawer(
       child: Column(
         children: <Widget>[
@@ -178,9 +181,10 @@ class AppDrawer extends StatelessWidget {
                   child: Text(
                     'Welcome User',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
+                        color: Colors.white,
+                        // fontSize: 24,
+
+                        fontSize: screenHeight * 0.029),
                   ),
                 ),
                 ListTile(
@@ -242,7 +246,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: BlackButton(
               text: "Log out",
               onPressed: () {

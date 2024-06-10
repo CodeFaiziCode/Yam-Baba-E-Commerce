@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'dart:io';
 
@@ -10,6 +10,7 @@ import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
 import 'widget/flash sale/flash_sale.dart';
 import 'widget/hot deals/hotDeals.dart';
+import 'widget/new items/newItems.dart';
 import 'widget/twoProductCard/twoProductCard.dart';
 
 class FlashSaleProduct {
@@ -60,90 +61,6 @@ class TwoProduct {
     required this.TwoProduct_imageUrl,
     required this.TwoProduct_price,
   });
-}
-
-// Product card widget
-class ProductCardWidget extends StatelessWidget {
-  final Product product;
-
-  const ProductCardWidget({Key? key, required this.product}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: 124,
-      height: 190,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 4),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.asset(
-                product.imageUrl,
-                width: double.infinity,
-                height: 112.0,
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
-            child: Text(
-              product.name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 2, left: 8, right: 7),
-            child: Text(
-              product.description,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 13,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 2, left: 8),
-            child: Row(
-              children: [
-                Text(
-                  '\$${product.price.toStringAsFixed(2)}',
-                  style: const TextStyle(
-                      fontSize: 14.0, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(width: 21),
-                const Icon(
-                  Icons.favorite_outline,
-                  size: 19,
-                ),
-                const SizedBox(width: 4),
-                const Icon(
-                  Icons.add_shopping_cart_outlined,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10),
-        ],
-      ),
-    );
-  }
 }
 
 // product card 2 cards display
@@ -302,28 +219,63 @@ class _HomeScreenState extends State<HomeScreen> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
+        appBar:
+            // AppBar(
+            //   iconTheme: const IconThemeData(color: Colors.white),
+            //   backgroundColor: Colors.blue,
+            //   flexibleSpace: Container(
+            //     height: screenHeight * 0.163,
+            //     child: Center(
+            //       child: Image.asset(
+            //         "assets/images/newLogo.png",
+            //         fit: BoxFit.cover,
+            //       ),
+            //     ),
+            //   ),
+            //   actions: [
+            //     const SizedBox(width: 25),
+            //     IconButton(
+            //       icon: const FaIcon(Icons.notifications_none, size: 31),
+            //       onPressed: () {},
+            //     ),
+            //     IconButton(
+            //       icon: const FaIcon(Icons.shopping_cart),
+            //       onPressed: () {},
+            //     ),
+            //     const SizedBox(width: 5),
+            //   ],
+            // ),
+
+            AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.blue,
           flexibleSpace: Container(
-            height: screenHeight * 0.163,
+            height: screenHeight * 0.2, // Adjusted height
             child: Center(
               child: Image.asset(
-                "assets/images/newLogo.png",
-                fit: BoxFit.cover,
+                "assets/images/download.png",
+                height: screenHeight * 0.050,
+                fit: BoxFit.contain,
               ),
             ),
+            padding: EdgeInsets.only(
+                // bottom: 0,
+                top: screenHeight * 0.04), // Adjust padding to move logo down
           ),
           actions: [
             IconButton(
-              icon: const FaIcon(Icons.notifications_none, size: 31),
+              icon: Icon(Icons.notifications_none, size: screenHeight * 0.035),
+              // padding:
+              //     EdgeInsets.only(right: 0), // Reduce padding to reduce space
               onPressed: () {},
             ),
             IconButton(
-              icon: const FaIcon(Icons.shopping_cart),
+              icon: Icon(Icons.shopping_cart_outlined,
+                  size: screenHeight * 0.035),
+              // padding:
+              //     EdgeInsets.only(left: 0), // Reduce padding to reduce space
               onPressed: () {},
             ),
-            const SizedBox(width: 10),
           ],
         ),
         drawer: AppDrawer(),
@@ -331,40 +283,35 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
-                child: Container(
-                  height: 45,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    color: Colors.white,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(
-                          Icons.search,
-                          size: 30,
-                        ),
-                        prefixIconColor: Colors.black54,
-                        hintText: 'Search On Yambaba',
-                        fillColor:
-                            Colors.grey[200], // Set fill color to a light gray
-                        filled: true, // Enable fill color
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 12.0), // Adjust this value as needed
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(12.0),
-                          ),
-                          borderSide: BorderSide
-                              .none, // Remove border to match fill color
-                        ),
+                //search bar size
+                // padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
+                padding: EdgeInsets.fromLTRB(
+                    screenWidth * 0.027,
+                    screenHeight * 0.008,
+                    screenWidth * 0.027,
+                    screenHeight * 0.008),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.search,
+                      size: 30,
+                    ),
+                    prefixIconColor: Colors.black54,
+                    hintText: 'Search On Yambaba',
+                    fillColor:
+                        Colors.grey[200], // Set fill color to a light gray
+                    filled: true, // Enable fill color
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 0), //content hieght
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12.0),
                       ),
-                      onChanged: (query) {},
+                      borderSide:
+                          BorderSide.none, // Remove border to match fill color
                     ),
                   ),
+                  onChanged: (query) {},
                 ),
               ),
               // const SizedBox(height: 5.0),
@@ -473,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          ProductCardWidget(
+                          NewItems(
                             product: products[index],
                           ),
                           const SizedBox(

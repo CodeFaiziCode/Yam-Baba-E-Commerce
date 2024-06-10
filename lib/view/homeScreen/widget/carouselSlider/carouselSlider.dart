@@ -66,10 +66,19 @@ class _CarousleSliderState extends State<CarousleSlider> {
                   _current = entry.key;
                 }),
                 child: Container(
-                  width: 9.0,
-                  height: 9.0,
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 4.0),
+                  // width: 10.0,
+                  // height: 10.0,
+                  width: screenWidth * 0.02,
+                  height: screenHeight * 0.01,
+                  // margin: const EdgeInsets.symmetric(
+                  //     vertical: 8.0, horizontal: 4.0),
+
+                  margin: EdgeInsets.only(
+                    left: screenWidth * 0.01,
+                    right: screenWidth * 0.01,
+                    top: screenHeight * 0.009,
+                    // bottom: screenHeight * 0.01
+                  ),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == entry.key ? Colors.blue : Colors.grey,
