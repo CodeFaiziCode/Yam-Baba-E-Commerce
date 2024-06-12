@@ -19,6 +19,7 @@ class CategoryItem extends StatelessWidget {
             print('Tapped on category: $title');
             // Example navigation using GetX
             Get.toNamed('/FashionScreen'); // Navigate to FashionScreen
+            // Get.toNamed(RouteName.fashionScreen);
           },
           child: Column(
             children: [
