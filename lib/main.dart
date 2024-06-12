@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/routes/appRoutes.dart';
+// import 'package:yam_baba_e_commerce/view/CateogoriesScreen/categoriesScreen.dart';
+// import 'package:yam_baba_e_commerce/view/ProfileScreen/profileScreen.dart';
+// import 'package:yam_baba_e_commerce/view/TrackOrder/trackOrderScreen.dart';
+// import 'package:yam_baba_e_commerce/view/fashionScreen/fashionScreen.dart';
+// import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/forgotPasswordScreen.dart';
+// import 'package:yam_baba_e_commerce/view/getStarted/getStarted.dart';
+// import 'package:yam_baba_e_commerce/view/homeScreen/home_screen.dart';
+// import 'package:yam_baba_e_commerce/view/loginScreen/loginScreen.dart';
+// import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/otpScreen.dart/otpScreen.dart';
+// import 'package:yam_baba_e_commerce/view/forgotPasswordScreen/resetPasswordScreen/resetPasswordScreen.dart';
+// import 'package:yam_baba_e_commerce/view/signupScreen/SignupScreen.dart';
+// import 'package:yam_baba_e_commerce/view/welcomeScreen/welcome_screen.dart';
+
+// import 'resources/components/navigationBar.dart';
+// import 'view/signupScreen/phoneNoRegisteration/phoneNoRegistration.dart';
 
 void main() {
   runApp(const MyApp());

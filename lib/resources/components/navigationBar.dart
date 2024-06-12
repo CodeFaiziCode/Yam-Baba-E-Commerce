@@ -179,39 +179,41 @@ class NavigationMenu extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home_outlined,
-                  color: Color(0xff595959),
+                  //color: Color(0xff595959),
                 ),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.favorite_border,
-                  color: Color(0xff595959),
+                  //color: Color(0xff595959),
                 ),
                 label: 'Wish List',
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
-                  color: Color(0xff595959),
+                  //color: Color(0xff595959),
                   AssetImage("assets/images/Y.png"),
                 ),
                 label: 'New',
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
-                  color: Color(0xff595959),
+                  //color: Color(0xff595959),
                   // size: 25,
                   AssetImage("assets/images/search.png"),
                 ),
                 label: 'Categories',
               ),
               BottomNavigationBarItem(
-                icon: Icon(color: Color(0xff595959), Icons.person_outline),
+                icon: Icon(
+                    //color: Color(0xff595959),
+                    Icons.person_outline),
                 label: 'Profile',
               ),
             ],
             selectedItemColor: Colors.blue,
-            unselectedItemColor: Colors.black,
+            unselectedItemColor: const Color(0xff595959),
             showSelectedLabels: true,
             showUnselectedLabels: true,
           )),

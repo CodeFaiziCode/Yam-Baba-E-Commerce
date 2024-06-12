@@ -5,6 +5,7 @@ import 'dart:io';
 
 // Importing specific components
 import '../../resources/components/navigationBar.dart';
+import '../checkout/checkout.dart';
 import 'widget/AppDrawer/appDrawer.dart';
 import 'widget/HorizontalSlider/horizontalCateogorySlider.dart';
 import 'widget/carouselSlider/carouselSlider.dart';
@@ -448,7 +449,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const Spacer(),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CheckoutScreen()),
+                            );
+                          },
                           child: Text(
                             "See All",
                             style: TextStyle(
