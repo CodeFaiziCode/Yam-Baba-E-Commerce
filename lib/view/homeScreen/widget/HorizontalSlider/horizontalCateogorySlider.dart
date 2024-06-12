@@ -5,6 +5,8 @@ class HorizontalCategorySlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     // List of category items
     final List<CategoryItem> categories = [
       CategoryItem(
@@ -50,7 +52,12 @@ class HorizontalCategorySlider extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: 88, // Adjusted height
+      // height: 88,
+
+      // Adjusted height
+
+      height: screenHeight * 0.108,
+
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
@@ -61,8 +68,12 @@ class HorizontalCategorySlider extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  width: 60,
-                  height: 60,
+                  // width: 60,
+                  // height: 60,
+
+                  width: screenWidth * 0.1587,
+                  height: screenHeight * 0.075,
+                  // height: screenHeight * 0.069,
                   padding: const EdgeInsets.all(2.5),
                   decoration: BoxDecoration(
                     color: Colors.orange,
@@ -76,8 +87,10 @@ class HorizontalCategorySlider extends StatelessWidget {
                     child: Image.asset(
                       categories[index].imageUrl,
                       fit: BoxFit.cover,
-                      width: 45,
-                      height: 45,
+                      // width: 45,
+                      // height: 45,
+                      width: screenWidth * 0.16,
+                      height: screenHeight * 0.079,
                     ),
                   ),
                 ),

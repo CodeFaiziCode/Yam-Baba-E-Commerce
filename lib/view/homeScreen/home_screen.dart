@@ -286,9 +286,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 //search bar size
                 // padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
                 padding: EdgeInsets.fromLTRB(
-                    screenWidth * 0.027,
+                    screenWidth * 0.025,
                     screenHeight * 0.008,
-                    screenWidth * 0.027,
+                    screenWidth * 0.025,
                     screenHeight * 0.008),
                 child: TextField(
                   decoration: InputDecoration(
@@ -386,7 +386,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const HorizontalCategorySlider(),
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 3),
+                padding: const EdgeInsets.only(left: 20),
                 child: Row(
                   children: [
                     Text(
