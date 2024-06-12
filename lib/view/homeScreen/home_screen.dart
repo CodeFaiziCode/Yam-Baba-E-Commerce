@@ -286,9 +286,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 //search bar size
                 // padding: const EdgeInsets.fromLTRB(13.0, 15, 13.0, 10.0),
                 padding: EdgeInsets.fromLTRB(
-                    screenWidth * 0.025,
+                    screenWidth * 0.029,
                     screenHeight * 0.008,
-                    screenWidth * 0.025,
+                    screenWidth * 0.029,
                     screenHeight * 0.008),
                 child: TextField(
                   decoration: InputDecoration(
