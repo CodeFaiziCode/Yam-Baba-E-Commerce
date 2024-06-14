@@ -215,10 +215,10 @@ String? validateEmailOrPhone(String? value) {
   }
 
   // Basic validation for email or phone format (can be enhanced)
-  if (!value.contains('@') && !value.startsWith('+')) {
-    return 'Invalid email or phone number format';
-  }
-  return null;
+  // if (!value.contains('@') && !value.startsWith('+')) {
+  //   return 'Invalid email or phone number format';
+  // }
+  // return null;
 }
 
 String? validatePassword(String? value) {

@@ -99,10 +99,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(height: screenHeight * 0.010),
                       Center(
                         child: BlackButton(
-                          onPressed: () {
+                          onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               // Handle sign in
-                              Get.toNamed("/HomeScreen");
+                              loginSM.authLogin();
                             }
                           },
                           text: "Sign In",

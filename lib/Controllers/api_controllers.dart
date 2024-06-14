@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../Models/api_models.dart';
-import '../Services/api_services.dart';
+import '../Api Handling/Models/api_models.dart';
+import '../Api Handling/Services/api_services.dart';
 
 class AuthController extends GetxController {
   var isLoading = false.obs;
