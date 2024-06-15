@@ -214,10 +214,10 @@ String? validateEmailOrPhone(String? value) {
     return 'Please enter your email or phone number';
   }
 
-  // Basic validation for email or phone format (can be enhanced)
-  // if (!value.contains('@') && !value.startsWith('+')) {
-  //   return 'Invalid email or phone number format';
-  // }
+  //Basic validation for email or phone format (can be enhanced)
+  if (!value.contains('@') && !value.startsWith('+')) {
+    return 'Invalid email or phone number format';
+  }
   // return null;
 }
 

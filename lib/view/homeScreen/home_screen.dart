@@ -248,20 +248,20 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
 
             AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.blue,
           flexibleSpace: Container(
-            height: screenHeight * 0.2, // Adjusted height
+            height: screenHeight * 0.2,
+            padding: EdgeInsets.only(
+                // bottom: 0,
+                top: screenHeight * 0.04), // Adjusted height
             child: Center(
               child: Image.asset(
                 "assets/images/download.png",
                 height: screenHeight * 0.050,
                 fit: BoxFit.contain,
               ),
-            ),
-            padding: EdgeInsets.only(
-                // bottom: 0,
-                top: screenHeight * 0.04), // Adjust padding to move logo down
+            ), // Adjust padding to move logo down
           ),
           actions: [
             IconButton(
@@ -578,7 +578,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             if (secondIndex < Two_products.length)
-                              SizedBox(width: 4),
+                              const SizedBox(width: 4),
                             if (secondIndex < Two_products.length)
                               Expanded(
                                 child: TwoProductCardWidget(

@@ -155,9 +155,12 @@
 //   }
 // }
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yam_baba_e_commerce/resources/components/blackButton.dart';
+import 'package:yam_baba_e_commerce/utils/shared_pref.dart';
 
 import '../../../../resources/components/navigationBar.dart';
 
@@ -250,6 +253,9 @@ class AppDrawer extends StatelessWidget {
             child: BlackButton(
               text: "Log out",
               onPressed: () {
+                LocalStorage.initialize();
+                LocalStorage.remove('token');
+                log('Token removed${LocalStorage.getString('token')}');
                 Get.toNamed("/LoginScreen");
                 // Navigator.pop(context); // Close the drawer after navigating
               },

@@ -75,7 +75,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(height: screenHeight * 0.02), // Reduced height
                     TextFormField(
-                      controller: signUpSM.usernameController.value,
+                      controller: signUpSM.firstnameController.value,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: AppColor.fieldColor,
@@ -91,7 +91,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: screenHeight * 0.026),
+                    SizedBox(height: screenHeight * 0.015),
+                    TextFormField(
+                      controller: signUpSM.lastnameController.value,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: AppColor.fieldColor,
+                        hintText: 'Last Name',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your username';
+                        }
+                        return null;
+                      },
+                    ),
+                    SizedBox(height: screenHeight * 0.015),
                     TextFormField(
                       controller: signUpSM.emailController.value,
                       keyboardType: TextInputType.emailAddress,
@@ -115,7 +133,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: screenHeight * 0.026),
+                    SizedBox(height: screenHeight * 0.015),
                     TextFormField(
                       controller: signUpSM.passwordController.value,
                       obscureText: true,
@@ -134,9 +152,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: screenHeight * 0.026),
+                    SizedBox(height: screenHeight * 0.015),
                     TextFormField(
-                      controller: signUpSM.passwordController.value,
+                      controller: signUpSM.confirmPasswordController.value,
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -157,7 +175,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Center(
                       child: BlackButton(
                         onPressed: () {
-                          Get.toNamed("/LoginScreen");
+                          if (_formKey.currentState!.validate()) {
+                            signUpSM.onSignUp();
+                          }
                         },
                         text: " Register ",
                         backgroundColor: Colors.blue,

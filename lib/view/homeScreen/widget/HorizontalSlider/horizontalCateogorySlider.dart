@@ -98,13 +98,14 @@ class HorizontalCategorySlider extends StatelessWidget {
                   height: 8,
                 ),
                 SizedBox(
-                  width: 72, // Adjusted width
-                  child: Text(
-                    categories[index].title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                  ),
+                  width: screenWidth * 0.16, // Adjusted width
+                  child: Text(categories[index].title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.027,
+                      )),
                 ),
               ],
             ),
